@@ -79,6 +79,8 @@
 - belongs_to :categorys_middle
 
 ## users_items Table
+|Column|Type|Options|
+|------|----|-------|
 |id|integer||
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
@@ -89,6 +91,8 @@
 - belongs_to :items
 
 ## Conditions Table
+|Column|Type|Options|
+|------|----|-------|
 |id|integer||
 |status|string|null: false|
 |items_id|references|null: false, foreign_key: true|
@@ -97,6 +101,8 @@
 - has_many :items
 
 ## Prefectures Table
+|Column|Type|Options|
+|------|----|-------|
 |id|integer||
 |name|string|null: false|
 
