@@ -35,48 +35,24 @@
 |shipping_date|integer|null: false|
 |prefectures_id|references|null: false, foreign_key: true|
 |transaction_status|integer|null: false|
+|categorys_id|iteger|null: false|
 ### Association
 - has_many :users, through :users_items
 - has_many :users_items
 - belongs_to :conditions
-- belongs_to :categorys_large
-- belongs_to :categorys_middle
-- belongs_to :categorys_small
+- belongs_to :categorys
 - belongs_to :prefectures
 
 
-## Categorys_large Table
+## Categorys Table
 |Column|Type|Options|
 |------|----|-------|
 |id|integer||
 |name|string|null: false|
-|categorys_middle_id|references|null: false, foreign_key: true|
+|parent_id|references|null: false, foreign_key: true|
 |items_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :items
-- has_many :categorys_middle
-
-## Categorys_middle Table
-|Column|Type|Options|
-|------|----|-------|
-|id|integer||
-|name|string|null: false|
-|categorys_small_id|references|null: false, foreign_key: true|
-|items_id|references|null: false, foreign_key: true|
-### Association
-- has_many :items
-- has_many :categorys_small
-- belongs_to :categorys_large
-
-## Categorys_small Table
-|Column|Type|Options|
-|------|----|-------|
-|id|integer||
-|name|string|null: false|
-|items_id|references|null: false, foreign_key: true|
-### Association
-- has_many :items
-- belongs_to :categorys_middle
 
 ## users_items Table
 |Column|Type|Options|
