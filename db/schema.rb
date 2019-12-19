@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_113458) do
+ActiveRecord::Schema.define(version: 2019_12_19_070239) do
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "image"
+    t.text "discription"
+    t.integer "price", null: false
+    t.bigint "condition_id_id", null: false
+    t.integer "shipping_charge", null: false
+    t.integer "shipping_date", null: false
+    t.bigint "prefectures_id_id", null: false
+    t.integer "transaction_status", null: false
+    t.integer "categorys_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["condition_id_id"], name: "index_items_on_condition_id_id"
+    t.index ["prefectures_id_id"], name: "index_items_on_prefectures_id_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
