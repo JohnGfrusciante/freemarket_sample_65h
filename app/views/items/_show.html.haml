@@ -1,0 +1,54 @@
+.show
+  .item
+    .item__name
+      バッグ
+    .item__image_seller
+      .item__image_seller__image
+        .item__image_seller__image__main
+          メイン画像
+        .item__image_seller__image__list
+          .item__image_seller__image__list--1
+          .item__image_seller__image__list--2
+          .item__image_seller__image__list--3
+          .item__image_seller__image__list--4
+          .item__image_seller__image__list--5
+          .item__image_seller__image__list--6
+          .item__image_seller__image__list--7
+          .item__image_seller__image__list--8
+          .item__image_seller__image__list--9
+          .item__image_seller__image__list--10
+      .item__image_seller__seller
+        出品情報
+        .item__seller__name
+        .item__seller__Category
+        .item__seller__brand
+        .item__seller__condition
+        .item__seller__shipping_charge
+        .item__seller__shipping_method
+        .item__seller__prefecture
+        .item__seller__date_of_shipment
+    .item__price
+      ２０００円
+      .item__price__tax
+        (税込)送料込み
+    .item__buy
+      = link_to '購入確認画面へ進む', "/", class: "item__buy--btn"
+      .item__buy__note
+        この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+    .item__text
+      商品説明です
+    .item__bottom_btn
+      %input(type="submit" value="いいね" class= "item__bottom_btn--iine")
+      %input(type="submit" value="不適切な商品の報告" class= "item__bottom_btn--report")
+      = link_to '🔒あんしん・あんぜんへの取り組み', "/", class: "item__bottom_btn--safety"
+  
+  .link_item
+    = link_to '前の商品？', "/", class: "link_item--left"
+    = link_to '次の商品？', "/", class: "link_item--right"
+  .link_app
+    フェイスブック
+    Twitter
+    ピンタレスト
+  .user_seller_item
+  .item_category_link
+  .show_footer

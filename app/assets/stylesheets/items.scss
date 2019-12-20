@@ -1,3 +1,99 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.show{
+  .item{
+    margin: 40px auto 0;
+    padding: 24px 40px;
+    // height: 1000px;
+    width: 620px;
+    background-color: blue;
+    &__name{
+      margin: 0 auto;
+      font-size: 36px;
+    }
+    &__image_seller{
+      display: flex;
+      &__image{
+        margin: 0 10px 0 0;
+        height: 420px;
+        width: 290px;
+        background-color: red;
+        &__main{
+          height: 300px;
+        }
+        &__list{
+          background-color: lightgray;
+
+          height: 120px;
+        }
+      }
+      &__seller{
+        margin: 0 0 0 10px;
+        height: 420px;
+        width: 290px;
+        background-color: green;
+      }
+    }
+    &__buy{
+      background-color: red;
+      &--btn{
+        padding-left: 150px;
+        font-size: 32px;
+        text-decoration: none;
+        color: white;
+      }
+      &__note{
+        padding: 0 0 0 60px;
+        color: red;
+        background-color: white;
+        font-size: 12px;
+      }
+    }
+    &__text{
+      margin: 20px auto;
+    }
+    &__bottom_btn{
+      height: 40px;
+      &--iine{
+        font-size: 16px;
+        margin: 0 10px;
+      }
+      &--report{
+        font-size: 16px;
+        margin: 0 10px;
+      }
+      &--safety{
+        font-size: 16px;
+        margin: 0 10px;
+        color: cornflowerblue;
+        float: right;
+      }
+    }
+  }
+  .link_item{
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 700px;
+    &--left{
+    }
+    &--right{
+      float: right;
+    }
+  }
+  .link_app{
+    background-color: blue;
+    margin: 0 auto;
+    padding: 20px 0;
+    height: 150px;
+    width: 700px;
+  }
+  .user_seller_item{
+
+  }
+  .item_category_link{
+    
+  }
+}
