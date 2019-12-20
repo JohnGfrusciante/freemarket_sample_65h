@@ -15,9 +15,9 @@
 |tell|integer|null: false|
 |profit|integer|null: false|
 ### Association
-- has_many :items, through :users_items
-- has_many :users_items
+- has_many :items
 - has_one :address
+
 
 ## Addresses Table
 |Column|Type|Options|
@@ -47,9 +47,10 @@
 |prefectures|integer|null: false|
 |transaction_status|integer|null: false|
 |category_id|iteger|null: false, foreign_key: true|
+|seller_id|references|null: false, foreign_key: true|
+|buyer_id|references|foreign_key: true|
 ### Association
-- has_many :users, through :users_items
-- has_many :users_items
+- belongs_to :user
 - belongs_to :category
 - has_many :item_images
 
@@ -73,16 +74,3 @@
 |parent_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :items
-
-
-## users_items Table
-|Column|Type|Options|
-|------|----|-------|
-|id|integer||
-|seller_id|references|null: false, foreign_key: true|
-|buyer_id|references|foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :item
