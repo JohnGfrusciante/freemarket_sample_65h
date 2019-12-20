@@ -3,7 +3,6 @@
 **establish database**
 
 ## Users Table
-
 |Column|Type|Options|
 |------|----|-------|
 |id|integer||
@@ -15,12 +14,25 @@
 |birth|integer|null: false|
 |tell|integer|null: false|
 |profit|integer|null: false|
-|prefectures|string|null: false|
-|address|string|null: false|
-|postal_code|integer|null: false|
+|prefectures|integer|null: false|
+|addresses_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :items, through :users_items
 - has_many :users_items
+- belongs_to :address
+
+## Addresses Table
+|Column|Type|Options|
+|------|----|-------|
+|id|integer||
+|postal_code|integer|null: false|
+|municipality|string|null: false|
+|house_number|string|null: false|
+|building|string||
+
+### Association
+- has_many :users
+
 
 ## Items Table
 |Column|Type|Options|
@@ -30,21 +42,19 @@
 |image|text||
 |discription|text||
 |price|integer|null: false|
-|condition_id|references|null: false, foreign_key: true|
+|condition|integer|null: false|
 |shipping_charge|integer|null: false|
 |shipping_date|integer|null: false|
-|prefectures_id|references|null: false, foreign_key: true|
+|prefectures|integer|null: false|
 |transaction_status|integer|null: false|
-|categorys_id|iteger|null: false|
+|categories_id|iteger|null: false|
 ### Association
 - has_many :users, through :users_items
 - has_many :users_items
-- belongs_to :conditions
-- belongs_to :categorys
-- belongs_to :prefectures
+- belongs_to :categorie
 
 
-## Categorys Table
+## Categories Table
 |Column|Type|Options|
 |------|----|-------|
 |id|integer||
@@ -53,6 +63,7 @@
 |items_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :items
+
 
 ## users_items Table
 |Column|Type|Options|
@@ -63,24 +74,5 @@
 |items_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :users
-- belongs_to :items
-
-## Conditions Table
-|Column|Type|Options|
-|------|----|-------|
-|id|integer||
-|status|string|null: false|
-|items_id|references|null: false, foreign_key: true|
-
-### Association
-- has_many :items
-
-## Prefectures Table
-|Column|Type|Options|
-|------|----|-------|
-|id|integer||
-|name|string|null: false|
-
-### Association
-- has_many :items
+- belongs_to :user
+- belongs_to :item
