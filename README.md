@@ -28,7 +28,7 @@
 |municipality|string|null: false|
 |house_number|string|null: false|
 |building|string||
-|users_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -51,7 +51,7 @@
 - has_many :users, through :users_items
 - has_many :users_items
 - belongs_to :category
-- has_many :Item_images
+- has_many :item_images
 
 
 ## Item_images Table
@@ -62,7 +62,7 @@
 |items_id|iteger|null: false|
 
 ### Association
-- has_one :item
+- belongs_to :item
 
 
 ## Categories Table
@@ -81,7 +81,7 @@
 |id|integer||
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
-|items_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
