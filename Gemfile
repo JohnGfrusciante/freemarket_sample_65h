@@ -41,11 +41,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
+  # gem 'capistrano'
+  # gem 'capistrano-rbenv'
+  # gem 'capistrano-bundler'
+  # gem 'capistrano-rails'
+  # gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -82,8 +82,8 @@ gem 'font-awesome-sass'
 gem 'devise'
 
 # Carrierwave Introduce
-gem 'carrierwave'
-gem 'mini_magick'
+# gem 'carrierwave'
+# gem 'mini_magick'
 
-gem 'pry-rails'
-gem 'fog-aws'
+# gem 'pry-rails'
+# gem 'fog-aws'
