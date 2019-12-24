@@ -1,0 +1,25 @@
+
+.buy_confirm_page{
+  background-color: #F5F5F5;
+
+  .header_confirm{
+    height: 128px;
+  }
+  .confirm{
+    width: 700px; 
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    &__head{
+      font-size: 22px;
+      font-weight: bold;
+      padding: 40px 0;
+      text-align: center;
+      border-style: solid, 1px;
+    }
+  }
+  .footer_confirm{
+    height: 220px;
+  }
+
+}
+//ボタンの色　#E9352D
