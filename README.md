@@ -24,7 +24,7 @@
 |------|----|-------|
 |id|integer||
 |postal_code|integer|null: false|
-|prefectures|integer|null: false|
+|prefecture|integer|null: false|
 |municipality|string|null: false|
 |house_number|string|null: false|
 |building|string||
@@ -44,15 +44,18 @@
 |condition|integer|null: false|
 |shipping_charge|integer|null: false|
 |shipping_date|integer|null: false|
-|prefectures|integer|null: false|
+|prefecture|integer|null: false|
 |transaction_status|integer|null: false|
 |category_id|iteger|null: false, foreign_key: true|
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
+
 ### Association
 - belongs_to :user
 - belongs_to :category
 - has_many :item_images
+- belongs_to :buyer,class_name: “User”
+- belongs_to :seller,class_name: “User”
 
 
 ## Item_images Table
@@ -60,7 +63,7 @@
 |------|----|-------|
 |id|integer||
 |image|integer||
-|items_id|iteger|null: false|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -71,6 +74,8 @@
 |------|----|-------|
 |id|integer||
 |name|string|null: false|
-|parent_id|references|null: false, foreign_key: true|
+|parent_id|integer||
+
 ### Association
 - has_many :items
+- has_ancestry
