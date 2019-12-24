@@ -41,9 +41,28 @@
             発送日の目安
         .tb_right
           .tb_right__name
-            Abag
+            = link_to "Abag", "/", id: "link_tb_right"
+            /////////////////////////////////////
+            .value_icon
+              .value_icon--good
+                = icon("fas", "grin-alt", style: "color:pink", class: "value_icon--icon")
+                200
+              .value_icon--soso
+                = icon("fas", "meh", style: "color:orange", class: "value_icon--icon")
+                87
+              .value_icon--bad
+                = icon("fas", "frown", style: "color:blue", class: "value_icon--icon")
+                21
           .tb_right__category
-            バッグ
+            .tb_right__category--1
+              = link_to "レディース", "/", class: "tb_right__category--1", id: "link_tb_right"
+            .tb_right__category--2
+              = icon("fas", "chevron-right", style: "color:#0A99E6")
+              = link_to "バッグ", "/", id: "link_tb_right"
+            .tb_right__category--3
+              = icon("fas", "chevron-right", style: "color:#0A99E6")
+              = link_to "ポーチ", "/", id: "link_tb_right"
+
           .tb_right__brand
             AAA
           .tb_right__size
@@ -55,7 +74,7 @@
           .tb_right__shipping_method
             未定
           .tb_right__prefecture
-            東京都
+            = link_to "東京都", "/", id: "link_tb_right"
           .tb_right__date_of_shipment
             2~3日で発送
     .item__price
@@ -89,7 +108,7 @@
   .user_seller_item
     = link_to 'ユーザーさんの他の出品', "/", class: "user_seller_item__link", id: "link_to_set"
     .user_seller_item__top
-      .user_seller_item__top__1
+      = link_to "/" , class: "user_seller_item__top__1", id: "item_link" do
         .user_seller_item__top__1--image
         .user_seller_item__top__1__item_params
           .user_seller_item__top__1__item_params--name
@@ -99,7 +118,7 @@
           .user_seller_item__top__1__item_params--iine
             ♡５
 
-      .user_seller_item__top__2
+      = link_to "/" , class: "user_seller_item__top__2", id: "item_link" do
         .user_seller_item__top__2--image
         .user_seller_item__top__2__item_params
           .user_seller_item__top__2__item_params--name
@@ -109,7 +128,7 @@
           .user_seller_item__top__2__item_params--iine
             ♡５
 
-      .user_seller_item__top__3
+      = link_to "/" , class: "user_seller_item__top__3", id: "item_link" do
         .user_seller_item__top__3--image
         .user_seller_item__top__3__item_params
           .user_seller_item__top__3__item_params--name
@@ -120,21 +139,21 @@
             ♡7
 
     .user_seller_item__bottom
-      .user_seller_item__bottom__4
+      = link_to "/" , class: "user_seller_item__bottom__4", id: "item_link" do
         .user_seller_item__bottom__4--image
         .user_seller_item__bottom__4__item_params
           .user_seller_item__bottom__4__item_params--name
           .user_seller_item__bottom__4__item_params--price
           .user_seller_item__bottom__4__item_params--iine
 
-      .user_seller_item__bottom__5
+      = link_to "/" , class: "user_seller_item__bottom__5", id: "item_link" do
         .user_seller_item__bottom__5--image
         .user_seller_item__bottom__5__item_params
           .user_seller_item__bottom__5__item_params--name
           .user_seller_item__bottom__5__item_params--price
           .user_seller_item__bottom__5__item_params--iine
 
-      .user_seller_item__bottom__6
+      = link_to "/" , class: "user_seller_item__bottom__6", id: "item_link" do
         .user_seller_item__bottom__6--image
         .user_seller_item__bottom__6__item_params
           .user_seller_item__bottom__6__item_params--name
@@ -144,7 +163,8 @@
   .item_category_link
     = link_to 'このブランドの他の出品', "/", class: "item_category_link--link", id: "link_to_set"
     .item_category_link__top
-      .item_category_link__top__1
+
+      = link_to "/" , class: "item_category_link__top__1", id: "item_link" do
         .item_category_link__top__1--image
         .item_category_link__top__1__item_params
           .item_category_link__top__1__item_params--name
@@ -153,7 +173,8 @@
             6000
           .item_category_link__top__1__item_params--iine
             ♡５
-      .item_category_link__top__2
+
+      = link_to "/" , class: "item_category_link__top__2", id: "item_link" do
         .item_category_link__top__2--image
         .item_category_link__top__2__item_params
           .item_category_link__top__2__item_params--name
@@ -162,7 +183,8 @@
             2000
           .item_category_link__top__2__item_params--iine
             ♡1
-      .item_category_link__top__3
+
+      = link_to "/" , class: "item_category_link__top__3", id: "item_link" do
         .item_category_link__top__3--image
         .item_category_link__top__3__item_params
           .item_category_link__top__3__item_params--name
@@ -172,8 +194,9 @@
           .item_category_link__top__3__item_params--iine
             ♡20
 
+
     .item_category_link__bottom
-      .item_category_link__bottom__4
+      = link_to "/" , class: "item_category_link__bottom__4", id: "item_link" do
         .item_category_link__bottom__4--image
         .item_category_link__bottom__4__item_params
           .item_category_link__bottom__4__item_params--name
@@ -183,7 +206,7 @@
           .item_category_link__bottom__4__item_params--iine
             ♡23
 
-      .item_category_link__bottom__5
+      = link_to "/" , class: "item_category_link__bottom__5", id: "item_link" do
         .item_category_link__bottom__5--image
         .item_category_link__bottom__5__item_params
           .item_category_link__bottom__5__item_params--name
@@ -193,7 +216,7 @@
           .item_category_link__bottom__5__item_params--iine
             ♡23
 
-      .item_category_link__bottom__6
+      = link_to "/" , class: "item_category_link__bottom__6", id: "item_link" do
         .item_category_link__bottom__6--image
         .item_category_link__bottom__6__item_params
           .item_category_link__bottom__6__item_params--name
