@@ -3,7 +3,6 @@
 **establish database**
 
 ## Users Table
-
 |Column|Type|Options|
 |------|----|-------|
 |id|integer||
@@ -15,72 +14,68 @@
 |birth|integer|null: false|
 |tell|integer|null: false|
 |profit|integer|null: false|
-|prefectures|string|null: false|
-|address|string|null: false|
-|postal_code|integer|null: false|
 ### Association
-- has_many :items, through :users_items
-- has_many :users_items
+- has_many :items
+- has_one :address
+
+
+## Addresses Table
+|Column|Type|Options|
+|------|----|-------|
+|id|integer||
+|postal_code|integer|null: false|
+|prefecture|integer|null: false|
+|municipality|string|null: false|
+|house_number|string|null: false|
+|building|string||
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+
 
 ## Items Table
 |Column|Type|Options|
 |------|----|-------|
 |id|integer||
 |name|string|null: false|
-|image|text||
 |discription|text||
 |price|integer|null: false|
-|condition_id|references|null: false, foreign_key: true|
+|condition|integer|null: false|
 |shipping_charge|integer|null: false|
 |shipping_date|integer|null: false|
-|prefectures_id|references|null: false, foreign_key: true|
+|prefecture|integer|null: false|
 |transaction_status|integer|null: false|
-|categorys_id|iteger|null: false|
-### Association
-- has_many :users, through :users_items
-- has_many :users_items
-- belongs_to :conditions
-- belongs_to :categorys
-- belongs_to :prefectures
-
-
-## Categorys Table
-|Column|Type|Options|
-|------|----|-------|
-|id|integer||
-|name|string|null: false|
-|parent_id|references|null: false, foreign_key: true|
-|items_id|references|null: false, foreign_key: true|
-### Association
-- has_many :items
-
-## users_items Table
-|Column|Type|Options|
-|------|----|-------|
-|id|integer||
+|category_id|iteger|null: false, foreign_key: true|
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
-|items_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :category
+- has_many :item_images
+- belongs_to :buyer,class_name: “User”
+- belongs_to :seller,class_name: “User”
 
-## Conditions Table
+
+## Item_images Table
 |Column|Type|Options|
 |------|----|-------|
 |id|integer||
-|status|string|null: false|
-|items_id|references|null: false, foreign_key: true|
+|image|integer||
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
-- has_many :items
+- belongs_to :item
 
-## Prefectures Table
+
+## Categories Table
 |Column|Type|Options|
 |------|----|-------|
 |id|integer||
 |name|string|null: false|
+|parent_id|integer||
 
 ### Association
 - has_many :items
+- has_ancestry
