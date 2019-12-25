@@ -13,9 +13,9 @@
 |name_first|string|null: false|
 |kana_family|string|null: false|
 |kana_first|string|null: false|
-|birth_year|string|null: false|
-|birth_month|string|null: false|
-|birth_day|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
 |tell|string|null: false|
 |profit|integer|null: false|
 ### Association
