@@ -55,13 +55,13 @@
         = link_to "変更する", "/", id: "change_btn"
 
     .confirm__btn
-      = link_to "購入する", "/"
+      = link_to "購入する", "/", class: "confirm__btn--btn"
 
   .footer_confirm
     .footer_confirm__reading
-      = link_to "プライバシーポリシー", "/"
-      = link_to "メルカリ利用規約", "/"
-      = link_to "特定商取引に関する表記", "/"
+      = link_to "プライバシーポリシー", "/", id: "reading_link"
+      = link_to "メルカリ利用規約", "/", id: "reading_link"
+      = link_to "特定商取引に関する表記", "/", id: "reading_link"
     .footer_confirm__logo
       .footer_confirm__logo--marc
       .footer_confirm__logo--inc

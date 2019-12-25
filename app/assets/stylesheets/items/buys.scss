@@ -8,11 +8,12 @@
   .confirm{
     width: 700px; 
     margin: 0 auto;
+    padding: 30px 0;
     background-color: #FFFFFF;
     &__head{
       font-size: 22px;
       font-weight: bold;
-      padding: 40px 0;
+      padding-bottom: 30px;
       text-align: center;
       border-bottom: 1px solid #ddd;
     }
@@ -53,6 +54,7 @@
       }
       &__point{
         padding-top: 10px;
+        font-size: 14px;
         color:lightslategray;
       }
     }
@@ -84,20 +86,43 @@
     }
     &__btn{
       margin: 20px 160px;
-      display: block;
       height: 50px;
+      background-color: #E9352D;
+      &--btn{
+        display: block;
+        line-height: 45px;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+      }
     }
   }
 
   .footer_confirm{
     height: 220px;
+    width: 700px; 
+    font-size: 12px;
+    margin: 30px auto;
+    &__reading{
+      text-align: center;
+    }
+    &__logo{
+      margin-top: 20px;
+    }
   }
-
 }
 
+#reading_link{
+  color: black;
+  text-decoration: none;
+  padding: 0 5px;
+}
 #change_btn{
   color: blue;
   text-decoration: none;
 }
-//横343px
-//ボタンの色　#E9352D
+
+//ヘッダーロゴ
+//画像表示
+//フッターロゴ
