@@ -1,12 +1,69 @@
 .buy_confirm_page
   .header_confirm
+    .header_confirm__logo
+    .header_confirm__mercari
+      メルカリ
+
   .confirm
     .confirm__head
       購入内容の確認
+
     .confirm__item
-      Abag
+      .confirm__item__image
+      .confirm__item__params
+        .confirm__item__params__name
+          Abag
+        .confirm__item__params__price
+          ¥5000 (税込) 送料込み
+
     .confirm__price
+      .confirm__price__payment
+        支払い金額
+        .confirm__price__payment--price
+          ¥5000
+      .confirm__price__point
+        ポイントを使用???
+
     .confirm__payment
+      .confirm__payment__params
+        .confirm__payment--params
+          支払い方法
+        .confirm__payment--whih
+          クレジットカード
+        .confirm__payment--num
+          カード番号
+        .confirm__payment--limit
+          有効期限
+        .confirm__payment--brand
+          visa
+      .confirm__payment--change_btn
+        = link_to "変更する", "/", id: "change_btn"
+
     .confirm__Shipping_address
+      .confirm__Shipping_address__params
+        .confirm__Shipping_address__params--haisousaki
+          配送先
+        .confirm__Shipping_address__params--yuubinnbanngou
+          〒111-2222
+        .confirm__Shipping_address__params--zyuusyo
+          渋谷区渋谷町1-22-33
+        .confirm__Shipping_address__params--tatemono
+          アジアビル
+        .confirm__Shipping_address__params--namae
+          鈴木さん
+      .confirm__Shipping_address__change_btn
+        = link_to "変更する", "/", id: "change_btn"
+
     .confirm__btn
+      = link_to "購入する", "/"
+
   .footer_confirm
+    .footer_confirm__reading
+      = link_to "プライバシーポリシー", "/"
+      = link_to "メルカリ利用規約", "/"
+      = link_to "特定商取引に関する表記", "/"
+    .footer_confirm__logo
+      .footer_confirm__logo--marc
+      .footer_confirm__logo--inc
+        ©️mercari, Inc.
+

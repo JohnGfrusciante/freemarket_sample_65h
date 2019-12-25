@@ -14,12 +14,90 @@
       font-weight: bold;
       padding: 40px 0;
       text-align: center;
-      border-style: solid, 1px;
+      border-bottom: 1px solid #ddd;
+    }
+    &__item{
+      border-bottom: 1px solid #ddd;
+      padding: 20px 160px;
+      display: flex;
+      &__image{
+        height: 80px;
+        width: 80px;
+        margin-right: 15px;
+        background-color: blue;
+      }
+      &__params{
+        font-size: 12px;
+        &__name{
+          margin-bottom: 8px;
+        }
+        &__price{
+          font-weight: bolder;
+        }
+      }
+    }
+    &__price{
+      margin: 20px 160px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+
+      &__payment{
+        display: inline;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 25px;
+        &--price{
+          font-size: 24px;
+          float: right;
+        }
+      }
+      &__point{
+        padding-top: 10px;
+        color:lightslategray;
+      }
+    }
+    &__payment{
+      font-size: 14px;
+      margin: 20px 160px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      &__params{
+        width: 300px;
+      }
+      &--params{
+        font-weight: bold;
+      }
+    }
+    &__Shipping_address{
+      font-size: 14px;
+      margin: 20px 160px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      &__params{
+        width: 300px;
+        &--haisousaki{
+          font-weight: bold;
+        }
+      }
+    }
+    &__btn{
+      margin: 20px 160px;
+      display: block;
+      height: 50px;
     }
   }
+
   .footer_confirm{
     height: 220px;
   }
 
 }
+
+#change_btn{
+  color: blue;
+  text-decoration: none;
+}
+//横343px
 //ボタンの色　#E9352D
