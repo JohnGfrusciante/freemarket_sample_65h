@@ -1,7 +1,7 @@
 .show
   .item
     .item__name
-      バッグ
+      #{@item.name}
     .item__image_seller
       .item__image_seller__image
         .item__image_seller__image__main
@@ -79,7 +79,8 @@
             2~3日で発送
     .item__price
       .item__price--price
-        ２０００円
+        #{@item.price.to_s(discription)}
+
       .item__price--tax
         (税込)送料込み
 
@@ -89,7 +90,7 @@
     .buy_note
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item__text
-      商品説明です
+      #{@item.discription}
     .item__bottom_btn
       %input(type="submit" value="♡ いいね" class= "item__bottom_btn--iine")
       %input(type="submit" value="🏳 不適切な商品の報告" class= "item__bottom_btn--report")
