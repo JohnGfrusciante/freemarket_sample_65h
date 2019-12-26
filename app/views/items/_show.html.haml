@@ -1,0 +1,231 @@
+.show
+  .item
+    .item__name
+      バッグ
+    .item__image_seller
+      .item__image_seller__image
+        .item__image_seller__image__main
+          商品画像
+        .item__image_seller__image__list
+          .item__image_seller__image__list--1
+            リスト１
+          .item__image_seller__image__list--2
+            リスト２
+          .item__image_seller__image__list--3
+          .item__image_seller__image__list--4
+          .item__image_seller__image__list--5
+          .item__image_seller__image__list--6
+          .item__image_seller__image__list--7
+          .item__image_seller__image__list--8
+          .item__image_seller__image__list--9
+          .item__image_seller__image__list--10
+      .item__image_seller__seller
+        .tb_left
+          .tb_left__name
+            出品者
+          .tb_left__category
+            カテゴリー
+          .tb_left__brand
+            ブランド
+          .tb_left__size
+            サイズ
+          .tb_left__condition
+            商品の状態
+          .tb_left__shipping_charge
+            配送料負担
+          .tb_left__shipping_method
+            配送の方法
+          .tb_left__prefecture
+            配送元地域
+          .tb_left__date_of_shipment
+            発送日の目安
+        .tb_right
+          .tb_right__name
+            = link_to "Abag", "/", id: "link_tb_right"
+            /////////////////////////////////////
+            .value_icon
+              .value_icon--good
+                = icon("fas", "grin-alt", style: "color:pink", class: "value_icon--icon")
+                200
+              .value_icon--soso
+                = icon("fas", "meh", style: "color:orange", class: "value_icon--icon")
+                87
+              .value_icon--bad
+                = icon("fas", "frown", style: "color:blue", class: "value_icon--icon")
+                21
+          .tb_right__category
+            .tb_right__category--1
+              = link_to "レディース", "/", class: "tb_right__category--1", id: "link_tb_right"
+            .tb_right__category--2
+              = icon("fas", "chevron-right", style: "color:#0A99E6")
+              = link_to "バッグ", "/", id: "link_tb_right"
+            .tb_right__category--3
+              = icon("fas", "chevron-right", style: "color:#0A99E6")
+              = link_to "ポーチ", "/", id: "link_tb_right"
+
+          .tb_right__brand
+            AAA
+          .tb_right__size
+            M
+          .tb_right__condition
+            新品
+          .tb_right__shipping_charge
+            送料込み(出品者負担)
+          .tb_right__shipping_method
+            未定
+          .tb_right__prefecture
+            = link_to "東京都", "/", id: "link_tb_right"
+          .tb_right__date_of_shipment
+            2~3日で発送
+    .item__price
+      .item__price--price
+        ２０００円
+      .item__price--tax
+        (税込)送料込み
+
+    .item__buy
+      = link_to '購入画面へ進む', "/", class: "item__buy__btn"
+
+    .buy_note
+      この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+    .item__text
+      商品説明です
+    .item__bottom_btn
+      %input(type="submit" value="♡ いいね" class= "item__bottom_btn--iine")
+      %input(type="submit" value="🏳 不適切な商品の報告" class= "item__bottom_btn--report")
+      = link_to '🔓あんしん・あんぜんへの取り組み', "/", class: "item__bottom_btn--safety", id: "link_to_set"
+  
+  .link_item
+    = link_to '前の商品？', "/", class: "link_item--left", id: "link_to_set"
+    = link_to '次の商品？', "/", class: "link_item--right", id: "link_to_set"
+  .link_app
+    = link_to "https://www.facebook.com/", class: "link_app__facebook" do
+      = icon('fab', 'facebook-square')
+    = link_to "https://twitter.com/", class: "link_app__twitter" do
+      = icon('fab', 'twitter-square')
+    = link_to "https://www.pinterest.jp/", class: "link_app__pinterest" do
+      = icon('fab', 'pinterest-square')
+  .user_seller_item
+    = link_to 'ユーザーさんの他の出品', "/", class: "user_seller_item__link", id: "link_to_set"
+    .user_seller_item__top
+      = link_to "/" , class: "user_seller_item__top__1", id: "item_link" do
+        .user_seller_item__top__1--image
+        .user_seller_item__top__1__item_params
+          .user_seller_item__top__1__item_params--name
+            商品名
+          .user_seller_item__top__1__item_params--price
+            6000
+          .user_seller_item__top__1__item_params--iine
+            ♡５
+
+      = link_to "/" , class: "user_seller_item__top__2", id: "item_link" do
+        .user_seller_item__top__2--image
+        .user_seller_item__top__2__item_params
+          .user_seller_item__top__2__item_params--name
+            商品名
+          .user_seller_item__top__2__item_params--price
+            6000
+          .user_seller_item__top__2__item_params--iine
+            ♡５
+
+      = link_to "/" , class: "user_seller_item__top__3", id: "item_link" do
+        .user_seller_item__top__3--image
+        .user_seller_item__top__3__item_params
+          .user_seller_item__top__3__item_params--name
+            商品名
+          .user_seller_item__top__3__item_params--price
+            500
+          .user_seller_item__top__3__item_params--iine
+            ♡7
+
+    .user_seller_item__bottom
+      = link_to "/" , class: "user_seller_item__bottom__4", id: "item_link" do
+        .user_seller_item__bottom__4--image
+        .user_seller_item__bottom__4__item_params
+          .user_seller_item__bottom__4__item_params--name
+          .user_seller_item__bottom__4__item_params--price
+          .user_seller_item__bottom__4__item_params--iine
+
+      = link_to "/" , class: "user_seller_item__bottom__5", id: "item_link" do
+        .user_seller_item__bottom__5--image
+        .user_seller_item__bottom__5__item_params
+          .user_seller_item__bottom__5__item_params--name
+          .user_seller_item__bottom__5__item_params--price
+          .user_seller_item__bottom__5__item_params--iine
+
+      = link_to "/" , class: "user_seller_item__bottom__6", id: "item_link" do
+        .user_seller_item__bottom__6--image
+        .user_seller_item__bottom__6__item_params
+          .user_seller_item__bottom__6__item_params--name
+          .user_seller_item__bottom__6__item_params--price
+          .user_seller_item__bottom__6__item_params--iine
+
+  .item_category_link
+    = link_to 'このブランドの他の出品', "/", class: "item_category_link--link", id: "link_to_set"
+    .item_category_link__top
+
+      = link_to "/" , class: "item_category_link__top__1", id: "item_link" do
+        .item_category_link__top__1--image
+        .item_category_link__top__1__item_params
+          .item_category_link__top__1__item_params--name
+            商品名
+          .item_category_link__top__1__item_params--price
+            6000
+          .item_category_link__top__1__item_params--iine
+            ♡５
+
+      = link_to "/" , class: "item_category_link__top__2", id: "item_link" do
+        .item_category_link__top__2--image
+        .item_category_link__top__2__item_params
+          .item_category_link__top__2__item_params--name
+            商品名
+          .item_category_link__top__2__item_params--price
+            2000
+          .item_category_link__top__2__item_params--iine
+            ♡1
+
+      = link_to "/" , class: "item_category_link__top__3", id: "item_link" do
+        .item_category_link__top__3--image
+        .item_category_link__top__3__item_params
+          .item_category_link__top__3__item_params--name
+            商品名
+          .item_category_link__top__3__item_params--price
+            34000
+          .item_category_link__top__3__item_params--iine
+            ♡20
+
+
+    .item_category_link__bottom
+      = link_to "/" , class: "item_category_link__bottom__4", id: "item_link" do
+        .item_category_link__bottom__4--image
+        .item_category_link__bottom__4__item_params
+          .item_category_link__bottom__4__item_params--name
+            商品名
+          .item_category_link__bottom__4__item_params--price
+            65000
+          .item_category_link__bottom__4__item_params--iine
+            ♡23
+
+      = link_to "/" , class: "item_category_link__bottom__5", id: "item_link" do
+        .item_category_link__bottom__5--image
+        .item_category_link__bottom__5__item_params
+          .item_category_link__bottom__5__item_params--name
+            商品名
+          .item_category_link__bottom__5__item_params--price
+            65000
+          .item_category_link__bottom__5__item_params--iine
+            ♡23
+
+      = link_to "/" , class: "item_category_link__bottom__6", id: "item_link" do
+        .item_category_link__bottom__6--image
+        .item_category_link__bottom__6__item_params
+          .item_category_link__bottom__6__item_params--name
+            商品名
+          .item_category_link__bottom__6__item_params--price
+            65000
+          .item_category_link__bottom__6__item_params--iine
+            ♡23
+
+  .show_footer
+    = link_to 'メルカリ ', "/", id: "link_to_set"
+    ＞ 商品名
