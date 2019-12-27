@@ -58,41 +58,17 @@
         &__main{
           height: 300px;
           background-color: #E9352D;
+          #main_image{
+            height: 300px;
+            width: 290px;
+          }
         }
         &__list{
           background-color: #F5F5F5;
           height: 120px;
           display: flex;
           flex-wrap: wrap;
-          &--1{
-            @include image_list
-
-          }
-          &--2{
-            @include image_list
-          }
-          &--3{
-            @include image_list
-          }
-          &--4{
-            @include image_list
-          }
-          &--5{
-            @include image_list
-          }
-          &--6{
-            @include image_list
-          }
-          &--7{
-            @include image_list
-          }
-          &--8{
-            @include image_list
-          }
-          &--9{
-            @include image_list
-          }
-          &--10{
+          #list_image{
             @include image_list
           }
         }
@@ -251,11 +227,13 @@
       margin: 5px auto;
       display: flex;
       &--price{
+        font-weight: bold;
         font-size: 24px;
         text-align: right;
         width: 50%;
       }
       &--tax{
+        font-size: 14px;
         line-height: 40px;
         width: 50%;
       }

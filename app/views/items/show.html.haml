@@ -5,20 +5,11 @@
     .item__image_seller
       .item__image_seller__image
         .item__image_seller__image__main
-          商品画像
+          = image_tag "#{@image[0].image}", id: "main_image"
+          
         .item__image_seller__image__list
-          .item__image_seller__image__list--1
-            リスト１
-          .item__image_seller__image__list--2
-            リスト２
-          .item__image_seller__image__list--3
-          .item__image_seller__image__list--4
-          .item__image_seller__image__list--5
-          .item__image_seller__image__list--6
-          .item__image_seller__image__list--7
-          .item__image_seller__image__list--8
-          .item__image_seller__image__list--9
-          .item__image_seller__image__list--10
+          - @image.each.with_index do |ima, i |
+            = image_tag "#{@image[i].image}", id: "list_image"
       .item__image_seller__seller
         .tb_left
           .tb_left__name
@@ -41,7 +32,7 @@
             発送日の目安
         .tb_right
           .tb_right__name
-            = link_to "Abag", "/", id: "link_tb_right"
+            = link_to "#{@seller_name.nickname}", "/", id: "link_tb_right"
             /////////////////////////////////////
             .value_icon
               .value_icon--good
@@ -68,18 +59,18 @@
           .tb_right__size
             M
           .tb_right__condition
-            新品
+            #{@item.condition}
           .tb_right__shipping_charge
             送料込み(出品者負担)
           .tb_right__shipping_method
             未定
           .tb_right__prefecture
-            = link_to "東京都", "/", id: "link_tb_right"
+            = link_to "#{@item.prefecture}", "/", id: "link_tb_right"
           .tb_right__date_of_shipment
             2~3日で発送
     .item__price
       .item__price--price
-        #{@item.price.to_s(discription)}
+        #{@item.price.to_s(:delimited)}
 
       .item__price--tax
         (税込)送料込み
