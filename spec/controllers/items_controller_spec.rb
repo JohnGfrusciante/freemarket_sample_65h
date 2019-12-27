@@ -9,8 +9,9 @@ describe ItemsController do
     end
 
     it "変数に正しい値が入っているか" do
-      item= create(:item)
-      get :show, params: {id: item}
+      # item = create(:item)
+      # get :show, params: {id: item}
+      # expect(assingens(:item)).to eq item
     end
   end
 end
