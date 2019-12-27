@@ -1,3 +1,262 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.body{
+  margin: 0 auto;
+}
+
+//画像リストの大きさを設定/////////////////////////
+@mixin image_list {
+  height: 60px;
+  width: 58px;
+}
+@mixin image_params {
+  height: 330px;
+  width: 220px;
+  &--image{
+    height: 220px;
+    background-color: black;
+  }
+  &__item_params{
+    height: 110px;
+    background-color: #FFFFFF;
+    padding: 0 20px;
+    &--name{
+      padding: 10px 0 45px;
+    }
+    &--price{
+      display: inline;
+    }
+    &--iine{
+      float: right;
+    }
+  }
+}
+
+.show{
+  background-color: #F5F5F5;
+  padding-top: 10px;
+  .item{
+    margin: 0 auto ;
+    padding: 0 40px;
+    width: 620px;
+    background-color: #FFFFFF;
+    &__name{
+      padding: 20px 0;
+      font-size: 26px;
+      text-align: center;
+      font-weight: bold;
+    }
+//商品画像//////////////////////////////////////
+    &__image_seller{
+      display: flex;
+      &__image{
+        margin: 0 10px 0 0;
+        height: 420px;
+        width: 290px;
+        &__main{
+          height: 300px;
+          background-color: #E9352D;
+        }
+        &__list{
+          background-color: #F5F5F5;
+          height: 120px;
+          display: flex;
+          flex-wrap: wrap;
+          &--1{
+            @include image_list
+
+          }
+          &--2{
+            @include image_list
+          }
+          &--3{
+            @include image_list
+          }
+          &--4{
+            @include image_list
+          }
+          &--5{
+            @include image_list
+          }
+          &--6{
+            @include image_list
+          }
+          &--7{
+            @include image_list
+          }
+          &--8{
+            @include image_list
+          }
+          &--9{
+            @include image_list
+          }
+          &--10{
+            @include image_list
+          }
+        }
+      }
+// 出品者情報////////////////////////////////////
+      &__seller{
+        margin: 0 0 0 10px;
+        height: 420px;
+        width: 290px;
+        display: flex;
+        .tb_left{
+          background-color: #F5F5F5;
+          height: 420px;
+          width: 130px;
+          font-size: 14px;
+          border: 1px solid #ddd;
+          display: inline-block;
+          &__name{
+            height: 70px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 70px;
+          }
+          &__category{
+            height: 65px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 65px;
+
+          }
+          &__brand{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 40px;
+
+          }
+          &__size{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 40px;
+
+          }
+          &__condition{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 38px;
+
+          }
+          &__shipping_charge{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 38px;
+
+          }
+          &__shipping_method{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 38px;
+
+          }
+          &__prefecture{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 38px;
+
+          }
+          &__date_of_shipment{
+            height: 40px;
+            text-align: center;
+            line-height: 38px;
+          }
+        }
+        .tb_right{
+          height: 420px;
+          width: 160px;
+          border: 1px solid #ddd;
+          background-color: #FFFFFF;
+          font-size: 12px;
+
+          #link_tb_right{
+            text-decoration: none;
+            color: #0A99E6;
+          }
+          #link_tb_right:hover{
+            text-decoration: underline;
+          }
+
+          &__name{
+            height: 70px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 45px;
+            .value_icon{
+              height: 25px;
+              display: flex;
+              justify-content: space-between;
+              line-height: 30px;
+              font-size: 12px;
+              padding: 0 10px;
+              &--icon{
+                font-size: 16px;
+              }
+            }
+          }
+          &__category{
+            height: 65px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            &--1{
+              line-height: 20px;
+            }
+          }
+          &__brand{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 40px;
+
+          }
+          &__size{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 40px;
+
+          }
+          &__condition{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 38px;
+
+          }
+          &__shipping_charge{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 38px;
+
+          }
+          &__shipping_method{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 38px;
+
+          }
+          &__prefecture{
+            height: 40px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+            line-height: 38px;
+
+          }
+          &__date_of_shipment{
+            height: 40px;
+            text-align: center;
+            line-height: 38px;
 .wrapper{
   font-weight: 600;
   font-family: 'arial unicode ms';
@@ -267,6 +526,201 @@
         }
       }
     }
+    &__price{
+      margin: 10px auto;
+      display: flex;
+      padding: 0 150px;
+      &--price{
+        width: 50%;
+        font-size: 24px;
+        display: inline;
+        text-align: end;
+      }
+      &--tax{
+        line-height: 40px;
+        font-size: 16px;
+        width: 50%;
+      }
+    }
+
+//購入ボタン///////////////////////////////////////
+    &__buy{
+      background-color: #E9352D;
+      height: 50px;
+      &__btn{
+        line-height: 50px;
+        height: 50px;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        display: block;
+      }
+    }
+    .buy_note{
+      color: #E9352D;
+      background-color: white;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    &__text{
+      margin: 20px auto;
+    }
+    &__bottom_btn{
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      &--iine{
+        font-size: 16px;
+        background-color: #F5F5F5;
+        border-style: none;
+        border-radius: 30px;
+        
+      }
+      &--report{
+        font-size: 16px;
+        background-color: #F5F5F5;
+        border-style: none;
+        border-radius: 30px;
+
+      }
+      &--safety{
+        line-height: 35px;
+        font-size: 16px;
+        color: #0A99E6;
+        float: right;
+      }
+    }
+  }
+  .link_item{
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 700px;
+    &--left{
+    }
+    &--right{
+      float: right;
+    }
+  }
+
+//アプリアイコン//////////////////////////////////////
+  .link_app{
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    padding: 80px 0 20px;
+    // height: 150px;
+    width: 700px;
+    &__facebook{
+      margin-left: 265px;
+      display: inline-block;    
+      font-size: 48px;
+      color: blue;
+    }
+    &__twitter{
+      display: inline-block;    
+      font-size: 48px;
+      margin: 0 30px;
+      color: lightskyblue;
+    }
+    &__pinterest{
+      font-size: 48px;
+      color: red;
+    }
+
+  }
+
+//セラーのその他の出品//////////////////////////////////
+  .user_seller_item{
+    width: 700px;
+    margin: 20px auto;
+    &__link{
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    &__top{
+      display: flex;
+      &__1{
+        @include image_params
+      }
+      &__2{
+        margin: 0 15px;
+        @include image_params
+      }
+      &__3{
+        @include image_params
+      }
+    }
+    &__bottom{
+      margin-top: 20px;
+      display: flex;
+      &__4{
+        @include image_params
+      }
+      &__5{
+        margin: 0 15px;
+        @include image_params
+      }
+      &__6{
+        @include image_params
+      }
+    }
+  }
+
+
+//カテゴリー一覧
+  .item_category_link{
+    margin: 20px auto;
+    padding: 0 130px;
+    width: 700px;
+    &--link{
+      font-size: 28px;
+    }
+    &__top{
+      display: flex;
+      &__1{
+        @include image_params
+      }
+      &__2{
+        margin: 0 15px;
+        @include image_params
+      }
+      &__3{
+        @include image_params
+      }
+    }
+    &__bottom{
+      margin-top: 20px;
+      display: flex;
+      &__4{
+        @include image_params
+      }
+      &__5{
+        margin: 0 15px;
+        @include image_params
+      }
+      &__6{
+        @include image_params
+      }
+    }
+  }
+  .show_footer{
+    padding-left: 80px;
+    border-top: 1px solid #ddd;
+  }
+  #link_to_set{
+    text-decoration: none;
+  }
+}
+
+#item_link{
+  color: black;
+  text-decoration: none;
+}
+
+
   }
 
   .footer{
