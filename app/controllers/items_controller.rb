@@ -8,6 +8,8 @@ class ItemsController < ApplicationController
     @item= Item.find(1)
   # item_idの値が同じレコードを取得
     @image= ItemImage.where(item_id: @item.id)
+    gon.image= ItemImage.where(item_id: @item.id)
+
   # 出品者情報を取得（名前だけが欲しい）。seller_idとusersテーブルのidを紐付け
     @seller_name= User.find(@item.seller_id)
   end
