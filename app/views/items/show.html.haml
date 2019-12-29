@@ -4,14 +4,8 @@
       #{@item.name}
     .item__image_seller
       .item__image_seller__image
-
-
-
-
         .item__image_seller__image__main
-        
           = image_tag "#{@image[0].image}", id: "main_image"
-
         .item__image_seller__image__list
           - @image.each.with_index do |ima, i |
             = image_tag "#{@image[i].image}",name: "#{i}", class: "list_image", id: "list(#{i})", onclick: "num_set(this)"
@@ -22,14 +16,7 @@
             console.log(list.name)
             console.log(gon.image[list.name].image)
             document.getElementById("main_image").src=image_path(gon.image[list.name].image)
-
           }
-
-
-
-
-
-          
       .item__image_seller__seller
         .tb_left
           .tb_left__name
@@ -53,7 +40,6 @@
         .tb_right
           .tb_right__name
             = link_to "#{@seller_name.nickname}", "/", id: "link_tb_right"
-            /////////////////////////////////////
             .value_icon
               .value_icon--good
                 = icon("fas", "grin-alt", style: "color:pink", class: "value_icon--icon")
