@@ -5,6 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable,
           :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+
    def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
 
@@ -28,7 +29,7 @@ class User < ApplicationRecord
     end
 
    def self.with_sns_data(auth, snscredential)
-    user = User.where(id: snscredential.user_id).first
+    user = User.find(id: snscredential.user_id)
     unless user.present?
       user = User.new(
         nickname: auth.info.name,
@@ -41,7 +42,7 @@ class User < ApplicationRecord
    def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider
-    snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    snscredential = SnsCredential.find_by(uid: uid, provider: provider)
     if snscredential.present?
       user = with_sns_data(auth, snscredential)[:user]
       sns = snscredential
