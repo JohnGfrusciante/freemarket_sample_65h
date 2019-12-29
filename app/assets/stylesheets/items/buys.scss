@@ -30,6 +30,7 @@
         background-color: blue;
       }
       &__params{
+        padding-left: 15px;
         font-size: 12px;
         &__name{
           margin-bottom: 8px;
@@ -58,6 +59,9 @@
         padding-top: 10px;
         font-size: 14px;
         color:lightslategray;
+        .check_box{
+          background-color: gray;
+        }
       }
     }
     &__payment{
@@ -102,15 +106,18 @@
   }
 
   .footer_confirm{
-    height: 220px;
+    height: 200px;
     width: 700px; 
     font-size: 12px;
-    margin: 30px auto;
+    margin: 40px auto 0;
+    
     &__reading{
       text-align: center;
     }
     &__logo{
-      margin-top: 20px;
+      margin-top: 30px;
+      text-align: center;
+
     }
   }
 }
@@ -125,7 +132,6 @@
   text-decoration: none;
 }
 
-//ヘッダーロゴ
 //画像表示
 //ポイント利用
 //フッターロゴ

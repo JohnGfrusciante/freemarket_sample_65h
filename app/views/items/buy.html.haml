@@ -2,12 +2,10 @@
   .header_confirm
     .header_confirm__logo
     .header_confirm__mercari
-      = image_tag 'fmarket_logo_red.svg', size: "230x65"
-
+      = link_to image_tag('fmarket_logo_red.svg', size: "230x65"), "/"
   .confirm
     .confirm__head
       購入内容の確認
-
     .confirm__item
       .confirm__item__image
       .confirm__item__params
@@ -15,16 +13,14 @@
           Abag
         .confirm__item__params__price
           ¥5000 (税込) 送料込み
-
     .confirm__price
       .confirm__price__payment
         支払い金額
         .confirm__price__payment--price
           ¥5000
-          -# .to_s(:delimited)}
       .confirm__price__point
-        ポイントを使用???
-
+        = check_box_tag :test, class: "check_box"
+        = label_tag :test, "ポイントを使用(所持ポイント：P0)"
     .confirm__payment
       .confirm__payment__params
         .confirm__payment--params
@@ -39,7 +35,6 @@
           visa
       .confirm__payment--change_btn
         = link_to "変更する", "/", id: "change_btn"
-
     .confirm__Shipping_address
       .confirm__Shipping_address__params
         .confirm__Shipping_address__params--haisousaki
@@ -54,10 +49,8 @@
           鈴木さん
       .confirm__Shipping_address__change_btn
         = link_to "変更する", "/", id: "change_btn"
-
     .confirm__btn
       = link_to "購入する", "/", class: "confirm__btn--btn"
-
   .footer_confirm
     .footer_confirm__reading
       = link_to "プライバシーポリシー", "/", id: "reading_link"
@@ -65,8 +58,7 @@
       = link_to "特定商取引に関する表記", "/", id: "reading_link"
     .footer_confirm__logo
       .footer_confirm__logo--marc
+        = link_to image_tag("logo_gray.svg", size: "100x100"), "/"
       .footer_confirm__logo--inc
-        -# = link_to "", "/"
-        -#   = image_tag "logo_gray.svg", size: "120x120"
         ©️mercari, Inc.
-
+-# .to_s(:delimited)} 金額に小数点をつけよう。
