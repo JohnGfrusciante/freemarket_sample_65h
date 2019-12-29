@@ -182,7 +182,91 @@
           }
         }
       }
-    
+      &__pick-up{
+        padding: 56px 0px 30px;
+        &__upper{
+          margin-bottom: 16px;
+          text-align: center;
+          font-size: 28px;
+        }
+        &__lower{
+          text-align: center;
+          &__contents{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: -10px 0px 0px -10px;
+            &__name{
+              margin: 10px 0px 0px 10px;
+              &__inner{
+                background-color: lightgray;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 14px;
+                font-weight: 600;
+                border-radius: 15px;
+                padding: 8px 16px;
+              }
+            }
+          }
+        }
+      }
+      &__new-arrivals{
+        &__upper{
+          align-items: flex-end;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 16px;
+          &__left{
+            font-size: 24px;
+          }
+          &__right{
+            font-size: 14px;
+            padding: 5px 16px 5px 5px;
+            a{
+              color: lightskyblue;
+            }
+          }
+        }
+        &__lower{
+          &__items{
+            display: flex;
+            flex-wrap: wrap;
+            &__item{
+              background-color: white;
+              height: 300px;
+              width: 20%;
+              padding: 10px;
+              box-sizing: border-box;
+              &__img{
+                background-color: palevioletred;
+                height: 0;
+                overflow: hidden;
+                padding: 0 0 100%;
+                &__price{
+                  align-items: center;
+                  background: rgba(0,0,0,.4);
+                  border-radius: 0 14px 14px 0;
+                  bottom: 8px;
+                }
+              }
+              &__name{
+                background-color: peru;
+                box-sizing: border-box;
+                color: #222;
+                font-size: 14px;
+                height: 64px;
+                line-height: 1.4em;
+                padding: 0 12px;
+                white-space: normal;
+                word-break: break-word;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   .footer{
     box-sizing: border-box;
