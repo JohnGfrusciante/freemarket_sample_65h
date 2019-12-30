@@ -2,7 +2,6 @@ class Item < ApplicationRecord
 
   has_many :item_images
   accepts_nested_attributes_for :item_images, allow_destroy: true
-<<<<<<< HEAD
 
   validates :name, presence: true
   validates :discription, presence: true
@@ -11,8 +10,7 @@ class Item < ApplicationRecord
   validates :shipping_charge, presence: true
   validates :shipping_date, presence: true
   validates :prefecture, presence: true
-=======
->>>>>>> 34aada99d64179836ccff2f1de384ca0c958ad23
+
   belongs_to :user, foreign_key: 'user_id'
   belongs_to :category
   

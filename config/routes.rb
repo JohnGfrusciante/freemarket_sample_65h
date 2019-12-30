@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
 
-=======
->>>>>>> 34aada99d64179836ccff2f1de384ca0c958ad23
   devise_for :users,
   controllers: {
     sessions: 'users/sessions',
