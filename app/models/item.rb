@@ -2,6 +2,8 @@ class Item < ApplicationRecord
 
   has_many :item_images
   accepts_nested_attributes_for :item_images, allow_destroy: true
+  belongs_to :user, foreign_key: 'user_id'
+  belongs_to :category
   
 
   enum condition: { 新品、未使用: 1, 未使用に近い: 2, 目立った傷汚れなし: 3, やや傷や汚れあり: 4, 傷や汚れあり: 5, 全体的に状態が悪い: 6}, _prefix: true
@@ -17,5 +19,5 @@ class Item < ApplicationRecord
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
   }, _prefix: true
-
+  
 end
