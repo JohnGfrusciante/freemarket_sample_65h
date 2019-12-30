@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 2019_12_26_101302) do
     t.integer "shipping_charge", null: false
     t.integer "shipping_date", null: false
     t.integer "prefecture", null: false
-    t.integer "transaction_status", null: false
-    t.integer "category_id", null: false
-    t.bigint "seller_id", null: false
+    t.integer "transaction_status", default: 0, null: false
+    t.integer "category_id"
+    t.bigint "seller_id"
     t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
