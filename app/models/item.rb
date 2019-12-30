@@ -2,6 +2,19 @@ class Item < ApplicationRecord
 
   has_many :item_images
   accepts_nested_attributes_for :item_images, allow_destroy: true
+<<<<<<< HEAD
+
+  validates :name, presence: true
+  validates :discription, presence: true
+  validates :price, presence: true
+  validates :condition, presence: true
+  validates :shipping_charge, presence: true
+  validates :shipping_date, presence: true
+  validates :prefecture, presence: true
+=======
+>>>>>>> 34aada99d64179836ccff2f1de384ca0c958ad23
+  belongs_to :user, foreign_key: 'user_id'
+  belongs_to :category
   
 
   enum condition: { 新品、未使用: 1, 未使用に近い: 2, 目立った傷汚れなし: 3, やや傷や汚れあり: 4, 傷や汚れあり: 5, 全体的に状態が悪い: 6}, _prefix: true
@@ -17,5 +30,5 @@ class Item < ApplicationRecord
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
   }, _prefix: true
-
+  
 end

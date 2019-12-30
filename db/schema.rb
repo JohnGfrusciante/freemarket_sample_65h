@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_24_110202) do
+ActiveRecord::Schema.define(version: 2019_12_26_101302) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "postal_code", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_12_24_110202) do
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "image"
+    t.text "image"
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,14 +46,23 @@ ActiveRecord::Schema.define(version: 2019_12_24_110202) do
     t.integer "shipping_charge", null: false
     t.integer "shipping_date", null: false
     t.integer "prefecture", null: false
-    t.integer "transaction_status", null: false
-    t.integer "category_id", null: false
-    t.bigint "seller_id", null: false
+    t.integer "transaction_status", default: 0, null: false
+    t.integer "category_id"
+    t.bigint "seller_id"
     t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -78,4 +87,5 @@ ActiveRecord::Schema.define(version: 2019_12_24_110202) do
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "seller_id"
+  add_foreign_key "sns_credentials", "users"
 end

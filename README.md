@@ -9,10 +9,14 @@
 |nickname|string|null: false|
 |password|string|null :false|
 |email|string|null: false|
-|name|string|null: false|
-|name_kana|string|null: false|
-|birth|integer|null: false|
-|tell|integer|null: false|
+|name_family|string|null: false|
+|name_first|string|null: false|
+|kana_family|string|null: false|
+|kana_first|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
+|tell|string|null: false|
 |profit|integer|null: false|
 ### Association
 - has_many :items
@@ -46,7 +50,7 @@
 |shipping_date|integer|null: false|
 |prefecture|integer|null: false|
 |transaction_status|integer|null: false|
-|category_id|iteger|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
 
