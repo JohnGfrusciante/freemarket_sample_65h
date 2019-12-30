@@ -87,3 +87,4 @@ gem 'mini_magick'
 
 gem 'pry-rails'
 gem 'fog-aws'
+gem 'jquery-rails'
