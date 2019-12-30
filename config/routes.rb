@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }  
   root to: "items#index"
-  resources :items, only: [:index, :new, :create, :edit, :update]　do
+  resources :items, only: [:index, :new, :create, :edit, :update]  do
     resources :item_image, only: [:create]
   end
 
