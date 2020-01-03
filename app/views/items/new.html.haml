@@ -11,30 +11,31 @@
           商品の情報を入力
       .sell-page__form--image
         .sell-page__form--image--label
-          %p
+          %p#bold
             出品画像
           %p#red-solid
             必須
-        %p
+        %p#small
           最大10枚までアップロードできます
         #image-box-1
           #previews
-          .item-num-0#image-box__container
-            -# = f.label :image, class: 'sell-page__form--image--select--icon' do
-            -#   = icon('fas', 'image', class: 'icon')
-            = f.fields_for :item_images do |i|
-              .js-file_group{data: {index: "#{i.index}"}}
+          #image-box__container
+            = f.label :image, class: 'item-num-0'  do
+              = f.fields_for :item_images do |i|
                 = i.file_field :image, class: 'js-file'
+                %pre
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをアップロード
       .sell-page__form--name
         .sell-page__form--name--label
-          %p
+          %p#bold
             商品名
           %p#red-solid
             必須
         .sell-page__form--name--field
           = f.text_field :name, placeholder: "商品名(必須40文字まで)"
-        .sell-page__form--name--label
-          %p
+        .sell-page__form--name--label2
+          %p#bold
             商品の説明
           %p#red-solid
             必須
@@ -44,22 +45,22 @@
         %h2
           商品の詳細
         .sell-page__form--details--label
-          %p
+          %p#bold
             カテゴリー
           %p#red-solid
             必須
-        .sell-page__form--details--select
+        #select
           = select_tag :category, options_for_select([["レディース", "レディース"],["メンズ", "メンズ"],["ベビー・キッズ", "ベビー・キッズ"],["インテリア・住まい・小物", "インテリア・住まい・小物"]]), prompt: "---"
-          .sell-page__form--details--select
+          #select
             = select_tag :category, options_for_select([["トップス", "トップス"],["ジャケット/アウター", "ジャケット/アウター"],["パンツ", "パンツ"],["靴", "靴"]]), prompt: "---"
-            .sell-page__form--details--select
+            #select
               = select_tag :category, options_for_select([["Tシャツ/カットソー", "Tシャツ/カットソー"],["シャツ", "シャツ"],["タンクトップ", "タンクトップ"],["ニット/セーター", "ニット/セーター"]]), prompt: "---"
         .sell-page__form--details--label
-          %p
+          %p#bold
             商品の状態
           %p#red-solid
             必須
-        .sell-page__form--details--select
+        #select
           = f.select :condition, Item.conditions.keys, {prompt: "---"}
 
         .sell-page__form--details--status
@@ -67,21 +68,21 @@
         %h2
           配送について
         .sell-page__form--shipping--label
-          %p
+          %p#bold
             配送料の負担
           %p#red-solid
             必須
         .sell-page__form--shipping--select
           = f.select :shipping_charge, Item.shipping_charges.keys, {prompt: "---"}
         .sell-page__form--shipping--label
-          %p
+          %p#bold
             発送元地域
           %p#red-solid
             必須
         .sell-page__form--shipping--select
           = f.select :prefecture, Item.prefectures.keys, {prompt: "---"}
         .sell-page__form--shipping--label
-          %p
+          %p#bold
             発送までの日数
           %p#red-solid
             必須
@@ -91,22 +92,20 @@
         %h2
           販売価格（300~9,999,999）
         .sell-page__form--price--label
-          %p
+          %p#bold
             価格
           %p#red-solid
             必須
-          %p
-            ¥
-          .sell-page__form--price--place
-            = f.number_field :price, min: 300, max: 9999999, placeholder: "例) 300"
-        .sell-page__form--price--tax
-          販売手数料（10%）
-          %p
-            -
+          .sell-page__form--price--label--place
+            %p#font-size
+              ¥        
+              = f.number_field :price, min: 300, max: 9999999, placeholder: "例) 300"
         .sell-page__form--price--profit
+          販売手数料（10%）
+          %p -
+        .sell-page__form--price--profit#bold
           販売利益
-          %p
-            -
+          %p -
       .sell-page__form--btn
         .sell-page__form--btn--caution
           = link_to "禁止されている出品"
