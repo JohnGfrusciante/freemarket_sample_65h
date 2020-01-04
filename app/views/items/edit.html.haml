@@ -19,10 +19,18 @@
           最大10枚までアップロードできます
         #image-box-1
           #previews
+            - @item.item_images.each_with_index do |img, i|
+              - if img.image.url.present?
+                .label
+                  = image_tag img.image.url, width: "114px", height: "72px", id: "#{i}"
+                  .js
+                    %a.js-edit 編集
+                    %a.js-remove2 削除
           #image-box__container
-            = f.label :image, class: 'item-num-0'  do
-              = f.fields_for :item_images do |i|
-                = i.file_field :image, class: 'js-file'
+            = f.fields_for :item_images do |i|
+              = f.label :image, class: 'item-num-0' do
+                = i.file_field :image, class: 'js-file', style: 'display: none'
+                = i.hidden_field :_destroy, value: false
                 %pre
                   ドラッグアンドドロップ
                   またはクリックしてファイルをアップロード
