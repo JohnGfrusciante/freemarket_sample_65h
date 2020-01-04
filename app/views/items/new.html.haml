@@ -11,9 +11,9 @@
           商品の情報を入力
       .sell-page__form--image
         .sell-page__form--image--label
-          %p#bold
+          %p.bold
             出品画像
-          %p#red-solid
+          %p.red-solid
             必須
         %p#small
           最大10枚までアップロードできます
@@ -28,16 +28,16 @@
                   またはクリックしてファイルをアップロード
       .sell-page__form--name
         .sell-page__form--name--label
-          %p#bold
+          %p.bold
             商品名
-          %p#red-solid
+          %p.red-solid
             必須
         .sell-page__form--name--field
           = f.text_field :name, placeholder: "商品名(必須40文字まで)"
         .sell-page__form--name--label2
-          %p#bold
+          %p.bold
             商品の説明
-          %p#red-solid
+          %p.red-solid
             必須
         .sell-page__form--name--description
           = f.text_area :discription, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）\r\n2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
@@ -45,9 +45,9 @@
         %h2
           商品の詳細
         .sell-page__form--details--label
-          %p#bold
+          %p.bold
             カテゴリー
-          %p#red-solid
+          %p.red-solid
             必須
         #select
           = select_tag :category, options_for_select([["レディース", "レディース"],["メンズ", "メンズ"],["ベビー・キッズ", "ベビー・キッズ"],["インテリア・住まい・小物", "インテリア・住まい・小物"]]), prompt: "---"
@@ -56,9 +56,9 @@
             #select
               = select_tag :category, options_for_select([["Tシャツ/カットソー", "Tシャツ/カットソー"],["シャツ", "シャツ"],["タンクトップ", "タンクトップ"],["ニット/セーター", "ニット/セーター"]]), prompt: "---"
         .sell-page__form--details--label
-          %p#bold
+          %p.bold
             商品の状態
-          %p#red-solid
+          %p.red-solid
             必須
         #select
           = f.select :condition, Item.conditions.keys, {prompt: "---"}
@@ -68,23 +68,23 @@
         %h2
           配送について
         .sell-page__form--shipping--label
-          %p#bold
+          %p.bold
             配送料の負担
-          %p#red-solid
+          %p.red-solid
             必須
         .sell-page__form--shipping--select
           = f.select :shipping_charge, Item.shipping_charges.keys, {prompt: "---"}
         .sell-page__form--shipping--label
-          %p#bold
+          %p.bold
             発送元地域
-          %p#red-solid
+          %p.red-solid
             必須
         .sell-page__form--shipping--select
           = f.select :prefecture, Item.prefectures.keys, {prompt: "---"}
         .sell-page__form--shipping--label
-          %p#bold
+          %p.bold
             発送までの日数
-          %p#red-solid
+          %p.red-solid
             必須
         .sell-page__form--shipping--select
           = f.select :shipping_date, Item.shipping_dates.keys, {prompt: "---"}
@@ -92,9 +92,9 @@
         %h2
           販売価格（300~9,999,999）
         .sell-page__form--price--label
-          %p#bold
+          %p.bold
             価格
-          %p#red-solid
+          %p.red-solid
             必須
           .sell-page__form--price--label--place
             %p#font-size
@@ -103,7 +103,7 @@
         .sell-page__form--price--profit
           販売手数料（10%）
           %p -
-        .sell-page__form--price--profit#bold
+        .sell-page__form--price--profit.bold
           販売利益
           %p -
       .sell-page__form--btn
