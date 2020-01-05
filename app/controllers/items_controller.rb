@@ -12,7 +12,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save!
+    if @item.save
+      redirect_to root_path, notice: '商品を出品しました'
+    else
+      render :new, notice: '商品情報の保存に失敗しました'
+    end 
   end
 
   def edit
