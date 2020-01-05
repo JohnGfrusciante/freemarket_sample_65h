@@ -11,8 +11,8 @@ class Item < ApplicationRecord
   validates :shipping_date, presence: true
   validates :prefecture, presence: true
 
-  belongs_to :user, foreign_key: 'user_id'
-  belongs_to :category
+  belongs_to :user, foreign_key: 'user_id', optional: true
+  belongs_to :category, optional: true
   
 
   enum condition: { 新品、未使用: 1, 未使用に近い: 2, 目立った傷汚れなし: 3, やや傷や汚れあり: 4, 傷や汚れあり: 5, 全体的に状態が悪い: 6}, _prefix: true
