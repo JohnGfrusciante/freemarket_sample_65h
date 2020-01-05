@@ -1,11 +1,12 @@
 $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
-    const html = `<div data-index="${num}" class="js-file_group">
+    const html = `<label data-index="${num}" class="item-num-0">
                     <input class="js-file" type="file"
                     name="item[item_images_attributes][${num}][image]"
-                    id="item_item_images_attributes_${num}_image"><br>
-                  </div>`;
+                    id="item_item_images_attributes_${num}_image">
+                    <pre>ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード</pre>
+                  </label>`;
     return html;
   }
 
@@ -24,7 +25,7 @@ $(document).on('turbolinks:load', ()=> {
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   // 既に使われているindexを除外
-  lastIndex = $('.js-file_group:last').data('index');
+  lastIndex = $('.item-num-0:last').data('index');
   fileIndex.splice(0, lastIndex);
 
   $('#image-box__container').on('change', '.js-file', function(e) {

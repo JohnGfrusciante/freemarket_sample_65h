@@ -1,10 +1,32 @@
 .sell-page{
   background-color: rgb(245, 245, 245);
-  #red-solid{
+  .red-solid{
     background-color: #ea352d;
     color: white;
     margin: 2px;
     font-size: 12px;
+    padding: 0 5px;
+    font-weight: bold;
+  }
+  h2{
+    font-weight: bold;
+  }
+  .bold{
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  select{
+    position: relative;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    width: 380px;
+    margin: 0 0 20px 250px;
   }
   &__header{
     h1{
@@ -32,9 +54,11 @@
       &--label{
         display: flex;
       }
-      #image-box-1{
-        // display: flex;
-        
+      #small{
+        font-size: 12px;
+        margin: 8px 0 0;
+      }
+      #image-box-1{        
         #previews{
           display: flex;
           max-width: 620px;
@@ -42,12 +66,14 @@
           .label{
             background-color: #f5f5f5;
             margin-right: 10px;
+            margin-top: 10px;
             padding: 25px 0;
             position: relative;
             .js{
               display: flex;
               position: absolute;
               bottom: 0;
+              color: #0099e8;
               &-edit{
                 border-right: 1px solid black;
                 padding-left: 15px;
@@ -67,7 +93,20 @@
           min-height: 162px;
           background-color: rgb(245, 245, 245);
           text-align: center;
-          line-height: 162px;
+          position: relative;
+          cursor: pointer;
+          input{
+            opacity: 0;
+            height: 162px;
+            width: 100%;
+            cursor: pointer;
+          }
+          pre{
+            bottom: 60px;
+            left: 200px;
+            position: absolute;
+
+          }
         }
       }
     }
@@ -77,24 +116,26 @@
       &--label{
         display: flex;
       }
+      &--label2{
+        display: flex;
+        margin-top: 20px;
+      }
       &--field{
         margin: 8px 0 0;
         input{
           width: 100%;
+          padding-left: 8px;
         }
       }
       &--description{
-        margin: 8px 0 0;        
-        input{
-          min-height: 104px;
-          width: 100%;
-          border: 1px solid #ccc;
+        textarea{
+        margin: 8px 0 0;
+        min-height: 130px;
+        width: 100%;
+        border: 1px solid #ccc;
         }
-        #content {
-          padding: 10px;
-        }
-        ::placeholder{
-          vertical-align: text-top;
+        #item_discription{
+          padding: 8px;
         }
       }
     }
@@ -108,7 +149,7 @@
       }
       &--label{
         display: flex;
-        margin-left: 350px;
+        margin-left: 250px;
       }
     }
     &--shipping{
@@ -121,7 +162,7 @@
       }
       &--label{
         display: flex;
-        margin-left: 350px;
+        margin-left: 250px;
       }
     }
     &--price{
@@ -132,18 +173,34 @@
         font-size: 14px;
         float: left;
       }
-      &
       &--label{
         display: flex;
-        margin-left: 350px;
-      }
-      &--tax{
-        display: flex;
-        margin-left: 350px;
+        margin-left: 250px;
+        position: relative;
+        margin-top: 5px;
+        &--place{
+          position: absolute;
+          right: 0;
+          input{
+            padding: 10px 5px 10px 80px;
+            text-align: right;
+            margin: 0;
+            font-size: 10px;
+          }
+          input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
       }
       &--profit{
         display: flex;
-        margin-left: 350px;
+        margin-left: 250px;
+        margin-top: 25px;
+        padding-top:20px;
+        border-top: 1px solid lightgray;
+        text-align: center;
+        justify-content: space-between;
       }
     }
     &--btn{
@@ -186,8 +243,8 @@
       padding: 0 10px;
       font-size: 12px;
     }
-  &--copyright{
-    font-size: 12px;
-  }
+    &--copyright{
+      font-size: 12px;
+    }
   }
 }
