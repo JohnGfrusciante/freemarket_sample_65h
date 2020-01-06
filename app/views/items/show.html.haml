@@ -33,7 +33,7 @@
             発送日の目安
         .tb_right
           .tb_right__name
-            = link_to "#{@seller_name.nickname}", "/", id: "link_tb_right"
+            = link_to "{@seller_name.nickname}", "/", id: "link_tb_right"
             .value_icon
               .value_icon--good
                 = icon("fas", "grin-alt", style: "color:pink", class: "value_icon--icon")
@@ -60,13 +60,13 @@
           .tb_right__condition
             #{@item.condition}
           .tb_right__shipping_charge
-            送料込み(出品者負担)
+            #{@item.shipping_charge}
           .tb_right__shipping_method
             未定
           .tb_right__prefecture
             = link_to "#{@item.prefecture}", "/", id: "link_tb_right"
           .tb_right__date_of_shipment
-            2~3日で発送
+            #{@item.shipping_date}
 
     .item__price
       .item__price--price
