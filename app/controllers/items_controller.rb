@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:edit, :update, :destroy]
   def index
-    @items= Item.all
+    @items= Item.order("created_at DESC").limit(10)
+    @images = ItemImage.all
   end
 
   def show
@@ -12,7 +13,7 @@ class ItemsController < ApplicationController
     @image= @item.item_images.where(item_id: @item.id)
     gon.image= @item.item_images.where(item_id: @item.id)
   # 出品者情報を取得（名前だけが欲しい）。seller_idとusersテーブルのidを紐付け
-    @seller_name= User.find(@item.seller_id)
+    # @seller_name= User.find(@item.seller_id)
   end
 
   def new
