@@ -44,54 +44,53 @@
         .main__inner__new-arrivals__upper__right
           = link_to "もっと見る>"
       .main__inner__new-arrivals___lower
-        - @items.each do |item|
-          - item.item_images.first(1).each do |img|
-            = image_tag img.image.url, width: "188px", hight: "188px" ,class:"item-image"
-            ¥
-            = item.price.to_s(:delimited)
-            = item.name
-          -# .item__image
-          -#   -# = link_to show_item_path(item) do
-          -#   = image_tag item.image.url, class: 'menu__area__food--image'
-        .item__image--name
-        -# %ul.main__inner__new-arrivals__lower__items
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
-        -#   %li.main__inner__new-arrivals__lower__items__item
-        -#     .main__inner__new-arrivals__lower__items__item__img
-        -#       .main__inner__new-arrivals__lower__items__item__img__price
-        -#     .main__inner__new-arrivals__lower__items__item__name
+        %ul.main__inner__new-arrivals__lower__items
+          - @items.each do |item|
+            - item.item_images.first(1).each do |img|
+              %li.main__inner__new-arrivals__lower__items__item
+                .main__inner__new-arrivals__lower__items__item__img
+                  = link_to item_path(item) do
+                    = image_tag img.image.url, width: "188px", hight: "188px" ,class:"item-image"
+                  .main__inner__new-arrivals__lower__items__item__img__price
+                    ¥
+                    = item.price.to_s(:delimited)
+                .main__inner__new-arrivals__lower__items__item__name
+                  = item.name
+    .main__inner__new-arrivals
+      .main__inner__new-arrivals__upper
+        .main__inner__new-arrivals__upper__left
+          メンズ新着アイテム
+        .main__inner__new-arrivals__upper__right
+          = link_to "もっと見る>"
+      .main__inner__new-arrivals___lower
+        %ul.main__inner__new-arrivals__lower__items
+          - @items.each do |item|
+            - item.item_images.first(1).each do |img|
+              %li.main__inner__new-arrivals__lower__items__item
+                .main__inner__new-arrivals__lower__items__item__img
+                  = link_to item_path(item) do
+                    = image_tag img.image.url, width: "188px", hight: "188px" ,class:"item-image"
+                  .main__inner__new-arrivals__lower__items__item__img__price
+                    ¥
+                    = item.price.to_s(:delimited)
+                .main__inner__new-arrivals__lower__items__item__name
+                  = item.name
+    .main__inner__new-arrivals
+      .main__inner__new-arrivals__upper
+        .main__inner__new-arrivals__upper__left
+          家電・スマホ・カメラ新着アイテム
+        .main__inner__new-arrivals__upper__right
+          = link_to "もっと見る>"
+      .main__inner__new-arrivals___lower
+        %ul.main__inner__new-arrivals__lower__items
+          - @items.each do |item|
+            - item.item_images.first(1).each do |img|
+              %li.main__inner__new-arrivals__lower__items__item
+                .main__inner__new-arrivals__lower__items__item__img
+                  = link_to item_path(item) do
+                    = image_tag img.image.url, width: "188px", hight: "188px" ,class:"item-image"
+                  .main__inner__new-arrivals__lower__items__item__img__price
+                    ¥
+                    = item.price.to_s(:delimited)
+                .main__inner__new-arrivals__lower__items__item__name
+                  = item.name
