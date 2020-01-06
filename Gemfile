@@ -48,6 +48,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -87,6 +88,14 @@ gem 'devise'
 # Carrierwave Introduce
 gem 'carrierwave'
 gem 'mini_magick'
+
+# SNS authentication
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+
+# Environment variable
+gem 'dotenv-rails'
 
 gem 'pry-rails'
 gem 'fog-aws'
