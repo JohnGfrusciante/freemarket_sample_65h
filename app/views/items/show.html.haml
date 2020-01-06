@@ -10,7 +10,7 @@
           = image_tag "#{@image[0].image}", id: "main_image"
         .item__image_seller__image__list
           - @image.each.with_index do |image, i |
-            = image_tag "#{image.image}}",name: "#{i}", class: "list_image", id: "list(#{i})", onclick: "num_set(this)"
+            = image_tag "#{image.image}",name: "#{i}", class: "list_image", id: "list(#{i})", onclick: "num_set(this)"
       .item__image_seller__seller
         .tb_left
           .tb_left__name
@@ -76,6 +76,8 @@
 
     .item__buy
       = link_to '購入画面へ進む', "/", class: "item__buy__btn"
+    .item__buy
+      = link_to '商品の編集', edit_item_path, class: "item__buy__btn"
 
     .buy_note
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
