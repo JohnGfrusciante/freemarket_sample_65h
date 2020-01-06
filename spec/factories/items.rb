@@ -1,5 +1,4 @@
 FactoryBot.define do
-
   factory :item do
     name              {"test"}
     discription       {"テストする為のフェイクデータ"}
@@ -9,5 +8,4 @@ FactoryBot.define do
     shipping_date     {1}
     prefecture        {1}
   end
-
 end
