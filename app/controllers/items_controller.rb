@@ -16,6 +16,5 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    # params.permit(:id)
   end
 end
