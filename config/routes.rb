@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
   }  
+
   root to: "items#index"
   resources :items, only: [:index, :new, :edit, :update]
   resources :mypages, path: 'mypage'

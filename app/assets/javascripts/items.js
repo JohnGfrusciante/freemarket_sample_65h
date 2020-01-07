@@ -70,5 +70,9 @@ $(document).on('turbolinks:load', ()=> {
     target_image.remove();
     target_value.attr('value', 'true');
   });
+  $(document).on("click", '.list_image', function(){
+    var change_image = $(this).attr('src')
+    $('#main_image').attr('src', change_image)
+  })
 });
 
