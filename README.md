@@ -50,7 +50,7 @@
 |shipping_date|integer|null: false|
 |prefecture|integer|null: false|
 |transaction_status|integer|null: false|
-|category_id|iteger|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|foreign_key: true|
 

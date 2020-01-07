@@ -1,7 +1,8 @@
 .wrapper{
-  // font-weight: 600;
-  // font-family: 'arial unicode ms';
-  // font-size: 14px;
+  font-weight: 600;
+  font-family: 'arial unicode ms';
+  font-size: 14px;
+  background-color: rgb(245, 245, 245);
   a{
     color: black;
   }
@@ -320,31 +321,29 @@
             flex-wrap: wrap;
             &__item{
               background-color: white;
-              height: 300px;
-              width: 20%;
-              padding: 10px;
+              margin: 0 10px 10px 0;
               box-sizing: border-box;
               &__img{
-                background-color: palevioletred;
                 height: 0;
                 overflow: hidden;
                 padding: 0 0 100%;
+                position: relative;
+                img{
+                  height: 188px;
+                }
                 &__price{
                   align-items: center;
                   background: rgba(0,0,0,.4);
                   border-radius: 0 14px 14px 0;
                   bottom: 8px;
+                  position: absolute;
                 }
               }
               &__name{
-                background-color: peru;
                 box-sizing: border-box;
-                color: #222;
-                font-size: 14px;
-                height: 64px;
-                line-height: 1.4em;
-                padding: 0 12px;
-                white-space: normal;
+                height: 50px;
+                font-size: 15px;
+                padding: 10px 12px 0;
                 word-break: break-word;
               }
             }
@@ -409,3 +408,4 @@
     list-style: none;
   }
 }
+
