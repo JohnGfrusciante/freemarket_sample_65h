@@ -1,3 +1,4 @@
-function num_set(list) {
-  document.getElementById("main_image").src=image_path(gon.image[list.name].image)
-}
+// function num_set(url) {
+//   document.getElementById("main_image").src=("#{url}");
+//   console.log(#{url})
+// }
