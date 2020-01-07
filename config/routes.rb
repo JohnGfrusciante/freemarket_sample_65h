@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
   }  
-  root to: "items#index"
+  root to: "items#show"
   resources :items  do
     resources :item_images, only: [:create]
   end

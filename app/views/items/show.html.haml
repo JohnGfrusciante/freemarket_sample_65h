@@ -1,6 +1,5 @@
 .show
   .item
-
     .item__name
       #{@item.name}
 
@@ -8,9 +7,10 @@
       .item__image_seller__image
         .item__image_seller__image__main
           = image_tag "#{@image[0].image}", id: "main_image"
+
         .item__image_seller__image__list
           - @image.each.with_index do |image, i |
-            = image_tag "#{image.image}}",name: "#{i}", class: "list_image", id: "list(#{i})", onclick: "num_set(this)"
+            = image_tag "#{image.image}", class: "list_image", id: "list(#{i})"
       .item__image_seller__seller
         .tb_left
           .tb_left__name
