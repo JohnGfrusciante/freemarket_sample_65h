@@ -95,3 +95,4 @@ gem 'dotenv-rails'
 
 gem 'pry-rails'
 gem 'fog-aws'
+gem 'jquery-turbolinks'

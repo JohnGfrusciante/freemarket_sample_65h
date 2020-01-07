@@ -1,0 +1,83 @@
+.mypage__inner__main
+  .mypage__inner__main__contents
+    .user
+      =link_to "#", class: "user__link" do
+        = image_tag ("/582642681.jpg")
+        .user__link__nickname Masanori
+        .user__link__review
+          %div
+            評価
+            %span 0
+          %div
+            出品数
+            %span 0
+    .tab-panel1
+      %ul.tab-group
+        %li.tab1.tab-A.is-active1 お知らせ
+        %li.tab1.tab-B やることリスト
+      .panel-group
+        %ul.panel1.tab-A.is-show1
+          %li.menu
+            .menu__inner
+              .menu__inner__content
+                = image_tag ("/logo_red.svg")
+                =link_to "《まもなく終了!》休暇中に出品して売上金を2倍にしよう!今すぐチェック♪"
+                = icon("fas", "chevron-right", class: "icon")
+          %li.menu
+            .menu__inner
+              .menu__inner__content
+                = image_tag ("/logo_red.svg")
+                =link_to "《1/9まで》「あけおめ」でメルペイをはじめるとP1000必ずもらえる！さらに抽選で全額ポイント還元のチャンスも!?"
+                = icon("fas", "chevron-right", class: "icon")
+          %li.menu
+            .menu__inner
+              .menu__inner__content
+                = image_tag ("/logo_red.svg")
+                =link_to "《今すぐ参加!》ボタンを押すだけで必ずお年玉がもらえるのは今日まで!"
+                = icon("fas", "chevron-right", class: "icon")
+          %li.menu
+            .menu__inner
+              .menu__inner__content
+                = image_tag ("/logo_red.svg")
+                =link_to "【1月31日まで】最大3%還元!メルペイスマートはらいでメルカリのお買い物をしよう!"
+                = icon("fas", "chevron-right", class: "icon")
+          %li.menu
+            .menu__inner
+              .menu__inner__content
+                = image_tag ("/logo_red.svg")
+                =link_to "事務局から個別メッセージ《みずほ銀行もつかえます》明日までポイント倍増!「あけおめ」を入力して銀行口座を登録すると合計P2000もらえる!"
+                = icon("fas", "chevron-right", class: "icon")
+          %li.all
+            .all__inner
+              .all__inner__button
+                =link_to "一覧を見る"
+
+        %ul.panel1.tab-B
+          %li.menu
+            .menu__inner
+              .menu__inner__contentB
+                = image_tag ("/logo_gray.svg")
+                %p 現在、やることリストはありません
+
+
+    .tab-panel2
+      .tab-panel2__head 
+        %p 購入した商品
+      %ul.tab-group
+        %li.tab2.tab-A.is-active2 取引中
+        %li.tab2.tab-B 過去の取引
+      .panel-group
+        %ul.panel2.tab-A.is-show2
+          %li.menu
+            .menu__inner
+              .menu__inner__content
+                = image_tag ("/logo_gray.svg")
+                %p 現在、やることリストはありません
+
+        %ul.panel2.tab-B
+          %li.menu
+            .menu__inner
+              .menu__inner__contentB
+                = image_tag ("/logo_gray.svg")
+                %p 現在、やることリストはありません
+
