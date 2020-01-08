@@ -2,6 +2,7 @@
   font-weight: 600;
   font-family: 'arial unicode ms';
   font-size: 14px;
+  background-color: rgb(245, 245, 245);
   .header{
     width: 100%;
     border: 1px red solid;
@@ -67,122 +68,6 @@
           }
         }
       }
-    }
-  }
-
-  .aside{
-    background-image: url("https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg");
-    background-position: center center;
-    &__contents{
-      display: flex;
-      justify-content: space-between;
-      width: 750px;
-      margin: 0px auto;
-      &__left{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: white;
-        &__upper{
-          font-size: 24px;
-          font-weight: 600;
-          margin-bottom: 15px;
-        }
-        &__lower{
-          font-size: 35px;
-          margin-bottom: 20px;
-        }
-        &__icons{
-          display: flex;
-          &__logo{
-            height: 50px;
-            margin-right: 20px;
-            width: 50px;
-          }
-          &__app-store{
-            // height: 68px;
-            margin-right: 20px;
-            // width: 68px;
-          }
-          &__google-store{
-            // height: 68px;
-            margin-right: 20px;
-            // width: 68px;
-          }
-        }
-      }
-      &__right{
-        &__img{
-          height: 260px;
-          width: 300px;
-        }
-      }
-    }
-  }
-
-  .main{
-    max-width: 1020px;
-    width: 100%;
-    margin: 0px auto;
-    padding: 0px;
-    &__inner{
-      position: relative;
-      &__top{
-        height: 390px;
-        left: 50%;
-        margin-left: -50vw;
-        position: relative;
-        top: 0px;
-        width: 100vw;
-        &__img{
-          background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-892151cc75b1f6a1285bf7943c9b933c.jpg);
-          background-position: center center;
-          height: 390px;
-          background-size: auto;
-          &__inner{
-            -webkit-box-align: center;
-            align-items: center;
-            max-width: 860px;
-            display: flex;
-            height: 100%;
-            position: relative;
-            margin: 0px auto;
-            &__img{
-              position: absolute;
-              top: 0px;
-              right: 0px;
-            }
-            &__contents{
-            position: relative;
-            width: 100%;
-            padding: 20px 40px;
-              &__text{
-              font-size: 60px;
-              font-weight: 600;
-              line-height: 1.4;
-              margin-bottom: 16px;
-              }
-              &__sub-text{
-              font-size: 18px;
-              line-height: 1.77777;
-              margin-bottom: 24px;
-              }
-              &__app{
-              background-color: initial;
-              position: initial;
-              text-align: left;
-              padding: 0px;
-                &__store{
-                height: 50px;
-                width: 170px;
-                display: inline-block;
-                }
-              }
-            }
-          }
-        }
-      }
-    
       &__pick-up{
         padding: 56px 0px 30px;
         &__upper{
@@ -269,6 +154,202 @@
     }
   }
 
+  .aside{
+    background-image: url("/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39 (1).jpg");
+    background-position: center center;
+    &__contents{
+      display: flex;
+      justify-content: space-between;
+      width: 750px;
+      margin: 0px auto;
+      &__left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        &__upper{
+          font-size: 24px;
+          font-weight: 600;
+          margin-bottom: 15px;
+        }
+        &__lower{
+          font-size: 35px;
+          margin-bottom: 20px;
+        }
+        &__icons{
+          display: flex;
+          &__logo{
+            height: 50px;
+            margin-right: 20px;
+            width: 50px;
+          }
+          &__app-store{
+            // height: 68px;
+            margin-right: 20px;
+            // width: 68px;
+          }
+          &__google-store{
+            // height: 68px;
+            margin-right: 20px;
+            // width: 68px;
+          }
+        }
+      }
+      &__right{
+        &__img{
+          height: 260px;
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  .main{
+    max-width: 1020px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    &__inner{
+      position: relative;
+      &__top{
+        height: 390px;
+        left: 50%;
+        margin-left: -50vw;
+        position: relative;
+        top: 0px;
+        width: 100vw;
+        &__img{
+          background-image: url("/top-banner-main-892151cc75b1f6a1285bf7943c9b933c.jpg");
+          background-position: center center;
+          height: 390px;
+          background-size: auto;
+          &__inner{
+            -webkit-box-align: center;
+            align-items: center;
+            max-width: 860px;
+            display: flex;
+            height: 100%;
+            position: relative;
+            margin: 0px auto;
+            &__img{
+              position: absolute;
+              top: 0px;
+              right: 0px;
+            }
+            &__contents{
+            position: relative;
+            width: 100%;
+            padding: 20px 40px;
+              &__text{
+              font-size: 60px;
+              font-weight: 600;
+              line-height: 1.4;
+              margin-bottom: 16px;
+              }
+              &__sub-text{
+              font-size: 18px;
+              line-height: 1.77777;
+              margin-bottom: 24px;
+              }
+              &__app{
+              background-color: initial;
+              position: initial;
+              text-align: left;
+              padding: 0px;
+                &__store{
+                height: 50px;
+                width: 170px;
+                display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__pick-up{
+        padding: 56px 0px 30px;
+        &__upper{
+          margin-bottom: 16px;
+          text-align: center;
+          font-size: 28px;
+        }
+        &__lower{
+          text-align: center;
+          &__contents{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: -10px 0px 0px -10px;
+            &__name{
+              margin: 10px 0px 0px 10px;
+              &__inner{
+                background-color: lightgray;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 14px;
+                font-weight: 600;
+                border-radius: 15px;
+                padding: 8px 16px;
+              }
+            }
+          }
+        }
+      }
+      &__new-arrivals{
+        &__upper{
+          align-items: flex-end;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 16px;
+          &__left{
+            font-size: 24px;
+          }
+          &__right{
+            font-size: 14px;
+            padding: 5px 16px 5px 5px;
+            a{
+              color: lightskyblue;
+            }
+          }
+        }
+        &__lower{
+          &__items{
+            display: flex;
+            flex-wrap: wrap;
+            &__item{
+              background-color: white;
+              margin: 0 10px 10px 0;
+              box-sizing: border-box;
+              &__img{
+                height: 0;
+                overflow: hidden;
+                padding: 0 0 100%;
+                position: relative;
+                img{
+                  height: 188px;
+                }
+                &__price{
+                  align-items: center;
+                  background: rgba(0,0,0,.4);
+                  border-radius: 0 14px 14px 0;
+                  bottom: 8px;
+                  position: absolute;
+                }
+              }
+              &__name{
+                box-sizing: border-box;
+                height: 50px;
+                font-size: 15px;
+                padding: 10px 12px 0;
+                word-break: break-word;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   .footer{
     box-sizing: border-box;
     background-color: #1a1a1a;
@@ -324,3 +405,4 @@
     list-style: none;
   }
 }
+

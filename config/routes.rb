@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
+    sessions: 'users/sessions',
     registrations: 'users/registrations',
-  }
+    omniauth_callbacks: 'users/omniauth_callbacks'
+    }
   devise_scope :user do
     get 'email', to: 'users/registrations#email'
     post 'email', to: 'users/registrations#email'
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
     post 'done', to: 'users/registrations#done'
   end
   root to: "items#index"
-  resources :items, only: [:index, :new, :edit, :update]
+  resources :items  do
+    resources :item_images, only: [:create]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

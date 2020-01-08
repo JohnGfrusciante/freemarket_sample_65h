@@ -47,6 +47,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'factory_bot_rails'
 end
 
@@ -65,6 +66,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'faker', "~> 2.8"
 end
 
 
@@ -87,5 +89,17 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# SNS authentication
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+
+# Environment variable
+gem 'dotenv-rails'
+
 gem 'pry-rails'
 gem 'fog-aws'
+gem 'jquery-rails'
+gem 'execjs'
+gem 'gon'
+

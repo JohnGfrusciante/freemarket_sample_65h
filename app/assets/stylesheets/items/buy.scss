@@ -1,0 +1,137 @@
+
+.buy_confirm_page{
+  background-color: #F5F5F5;
+
+  .header_confirm{
+    height: 100px;
+    text-align: center;
+    padding-top: 30px;
+  }
+  .confirm{
+    width: 700px; 
+    margin: 0 auto;
+    padding: 30px 0;
+    background-color: #FFFFFF;
+    &__head{
+      font-size: 22px;
+      font-weight: bold;
+      padding-bottom: 30px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    &__item{
+      border-bottom: 1px solid #ddd;
+      padding: 20px 160px;
+      display: flex;
+      &__image{
+        height: 80px;
+        width: 80px;
+        margin-right: 15px;
+        background-color: blue;
+      }
+      &__params{
+        padding-left: 15px;
+        font-size: 12px;
+        &__name{
+          margin-bottom: 8px;
+        }
+        &__price{
+          font-weight: bolder;
+        }
+      }
+    }
+    &__price{
+      margin: 20px 160px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+
+      &__payment{
+        display: inline;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 25px;
+        &--price{
+          font-size: 24px;
+          float: right;
+        }
+      }
+      &__point{
+        padding-top: 10px;
+        font-size: 14px;
+        color:lightslategray;
+        .check_box{
+          background-color: gray;
+        }
+      }
+    }
+    &__payment{
+      font-size: 14px;
+      margin: 20px 160px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      &__params{
+        width: 300px;
+      }
+      &--params{
+        font-weight: bold;
+      }
+    }
+    &__Shipping_address{
+      font-size: 14px;
+      margin: 20px 160px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      &__params{
+        width: 300px;
+        &--haisousaki{
+          font-weight: bold;
+        }
+      }
+    }
+    &__btn{
+      margin: 20px 160px;
+      height: 50px;
+      background-color: #E9352D;
+      &--btn{
+        display: block;
+        line-height: 45px;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .footer_confirm{
+    height: 200px;
+    width: 700px; 
+    font-size: 12px;
+    margin: 40px auto 0;
+    
+    &__reading{
+      text-align: center;
+    }
+    &__logo{
+      margin-top: 30px;
+      text-align: center;
+
+    }
+  }
+}
+
+#reading_link{
+  color: black;
+  text-decoration: none;
+  padding: 0 5px;
+}
+#change_btn{
+  color: blue;
+  text-decoration: none;
+}
+
+//画像表示
+//ポイント利用
+//フッターロゴ
