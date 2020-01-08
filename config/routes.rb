@@ -7,13 +7,14 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
   }  
-  root to: "card#new"
-  resources :items, only: [:index, :new, :edit, :update] do
+  root to: "items#show"
+  resources :items, only: [:show, :index, :new, :edit, :update] do
   end
 
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
+      post 'get', to: 'card#pay'
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
     end
