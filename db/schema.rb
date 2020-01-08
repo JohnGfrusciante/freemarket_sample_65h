@@ -65,19 +65,12 @@ ActiveRecord::Schema.define(version: 2019_12_24_110202) do
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-<<<<<<< Updated upstream
     t.string "name_family", null: false
     t.string "name_first", null: false
     t.string "kana_family", null: false
     t.string "kana_first", null: false
     t.date "birthday", null: false
     t.string "tel", null: false
-=======
-    t.string "name", null: false
-    t.string "name_kana", null: false
-    t.integer "birth", null: false
-    t.string "tell", null: false
->>>>>>> Stashed changes
     t.integer "profit", default: 0, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

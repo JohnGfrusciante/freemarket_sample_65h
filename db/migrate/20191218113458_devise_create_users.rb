@@ -7,19 +7,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :nickname,               null: false
       t.string :email,                  null: false, default: ""
       t.string :encrypted_password,     null: false, default: ""
-<<<<<<< Updated upstream
       t.string :name_family,                   null: false
       t.string :name_first,                   null: false
       t.string :kana_family,              null: false
       t.string :kana_first,              null: false
       t.date :birthday,                 null: false
       t.string :tel,                  null: false, unique: true
-=======
-      t.string :name,                   null: false
-      t.string :name_kana,              null: false
-      t.integer :birth,                 null: false
-      t.string :tell,                  null: false, unique: true
->>>>>>> Stashed changes
       t.integer :profit,                null: false, default: "0"
 
       ## Recoverable

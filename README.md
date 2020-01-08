@@ -9,20 +9,12 @@
 |nickname|string|null: false|
 |password|string|null :false|
 |email|string|null: false|
-<<<<<<< Updated upstream
 |name_family|string|null: false|
 |name_first|string|null: false|
 |kana_family|string|null: false|
 |kana_first|string|null: false|
-|birth_year|integer|null: false|
-|birth_month|integer|null: false|
-|birth_day|integer|null: false|
-=======
-|name|string|null: false|
-|name_kana|string|null: false|
-|birth|integer|null: false|
->>>>>>> Stashed changes
-|tell|string|null: false|
+|birthday|date|null: false|
+|tel|string|null: false|
 |profit|integer|null: false|
 ### Association
 - has_many :items
@@ -33,11 +25,16 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer||
+|name_family|string|null: false|
+|name_first|string|null: false|
+|kana_family|string|null: false|
+|kana_first|string|null: false|
 |postal_code|integer|null: false|
 |prefecture|integer|null: false|
 |municipality|string|null: false|
 |house_number|string|null: false|
 |building|string||
+|tel|string||
 |user_id|references|null: false, foreign_key: true|
 
 ### Association

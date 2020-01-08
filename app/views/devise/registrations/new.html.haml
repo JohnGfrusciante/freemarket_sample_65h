@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 %h2 新規会員登録
 %div
   = link_to "メールアドレスで登録する", '/email', class: 'regist'
@@ -6,61 +5,3 @@
   = link_to "FaceBookで登録する", '#', class: 'regist'
 %div
   = link_to "Googleで登録する", '#', class: 'regist'
-=======
-%h2 会員情報入力
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :"ニックネーム 必須"
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :"メールアドレス 必須"
-    %br/
-    = f.email_field :email, autocomplete: "email"
-  .field
-    = f.label :"パスワード 必須"
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  -# .field
-  -#   = f.label :password_confirmation
-  -#   %br/
-  -#   = f.password_field :password_confirmation, autocomplete: "new-password"
-
-
-  .field
-    = f.label :"お名前(全角) 必須"
-    %br/
-    = f.text_field :name, autocomplete: "name"
-    = f.text_field :name, autocomplete: "name"
-
-  .field
-    = f.label :"お名前カナ(全角) 必須"
-    %br/
-    = f.text_field :name_kana, autocomplete: "name_kana"
-    = f.text_field :name_kana, autocomplete: "name_kana"
-
-  -# .field
-  -#   = f.label :"生年月日(正しい方) 必須"
-  -#   %br/
-  -#   != sprintf(f.date_select(:birth, prefix:'birth', with_css_classes:'XXXXX', prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
-
-  .field
-    = f.label :"生年月日(テストの方) 必須"
-    %br/
-    = f.select :birth, [2019,2020]
-
-
-  .field
-    = f.label :"電話番号 必須"
-    %br/
-    = f.text_field :tell, autofocus: true, autocomplete: "tell"
-
-  .actions
-    = f.submit "Sign up"
-
--# = render "devise/shared/links"
->>>>>>> Stashed changes
