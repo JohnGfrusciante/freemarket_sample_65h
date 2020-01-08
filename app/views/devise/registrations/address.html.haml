@@ -22,7 +22,7 @@
   .field
     = f.label :"都道府県 必須"
     %br/
-    = f.select :prefecture, ['1', '2', '3']
+    = f.select :prefecture, Address.prefectures.keys, {promt: "---"}
 
   .field
     = f.label :"市区町村 必須"
