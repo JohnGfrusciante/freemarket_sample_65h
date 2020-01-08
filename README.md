@@ -9,6 +9,7 @@
 |nickname|string|null: false|
 |password|string|null :false|
 |email|string|null: false|
+<<<<<<< Updated upstream
 |name_family|string|null: false|
 |name_first|string|null: false|
 |kana_family|string|null: false|
@@ -16,6 +17,11 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
+=======
+|name|string|null: false|
+|name_kana|string|null: false|
+|birth|integer|null: false|
+>>>>>>> Stashed changes
 |tell|string|null: false|
 |profit|integer|null: false|
 ### Association
