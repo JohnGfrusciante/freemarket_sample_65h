@@ -5,11 +5,7 @@
       .header__right--loggingIn
         .loggingName
           こんにちは
-<<<<<<< Updated upstream
           = current_user.name_family
-=======
-          = current_user.name
->>>>>>> Stashed changes
           様
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'loggingIn'
     - else
@@ -17,3 +13,7 @@
         = link_to "新規登録", '/users/sign_up', class: 'regist'
       .header__right--login
         = link_to "ログイン", '/users/sign_in', class: 'login'
+.wrapper
+  = render 'header'
+  = render 'main'
+  = render 'footer'
