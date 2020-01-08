@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 
   # ex, create charge
   charge = Payjp::Charge.create(
-    amount: 4000,
+    amount: 9000,
     card: token,
     currency: 'jpy',
   )
