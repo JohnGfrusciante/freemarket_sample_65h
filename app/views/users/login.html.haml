@@ -1,0 +1,22 @@
+.log-in
+  .log-in__head
+    %p アカウントをお持ちでない方はこちら
+    %a.log-in__head--register 新規会員登録
+  .log-in__sns
+    .log-in__sns--facebook
+      %label
+        = icon('fab', 'facebook-square', class: 'icon')
+        %a Facebookでログイン
+    .log-in__sns--google
+      %label
+        = icon('fab', 'google', class: 'icon')
+        %a Googleでログイン
+  .log-in__mail
+    = email_field :email, placeholder: "メールアドレス"
+  .log-in__password
+    = password_field :password, placeholder: "パスワード"
+  .log-in__btn
+    = button_to "ログイン"
+  .log-in__forgot
+    = link_to "パスワードをお忘れの方"
+    

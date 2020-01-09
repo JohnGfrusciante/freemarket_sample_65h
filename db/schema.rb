@@ -13,11 +13,16 @@
 ActiveRecord::Schema.define(version: 2019_12_30_093811) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "postal_code", null: false
+    t.string "name_family", null: false
+    t.string "name_first", null: false
+    t.string "kana_family", null: false
+    t.string "kana_first", null: false
+    t.string "postal_code", null: false
     t.integer "prefecture", null: false
     t.string "municipality", null: false
     t.string "house_number", null: false
     t.string "building"
+    t.string "tel"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_12_30_093811) do
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "image"
+    t.text "image", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,15 +53,15 @@ ActiveRecord::Schema.define(version: 2019_12_30_093811) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.text "discription"
+    t.text "discription", null: false
     t.integer "price", null: false
     t.integer "condition", null: false
     t.integer "shipping_charge", null: false
     t.integer "shipping_date", null: false
     t.integer "prefecture", null: false
-    t.integer "transaction_status", null: false
-    t.integer "category_id", null: false
-    t.bigint "seller_id", null: false
+    t.integer "transaction_status", default: 0, null: false
+    t.integer "category_id"
+    t.bigint "seller_id"
     t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -77,10 +82,12 @@ ActiveRecord::Schema.define(version: 2019_12_30_093811) do
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "name", null: false
-    t.string "name_kana", null: false
-    t.integer "birth", null: false
-    t.integer "tell", null: false
+    t.string "name_family", null: false
+    t.string "name_first", null: false
+    t.string "kana_family", null: false
+    t.string "kana_first", null: false
+    t.date "birthday", null: false
+    t.string "tel", null: false
     t.integer "profit", default: 0, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

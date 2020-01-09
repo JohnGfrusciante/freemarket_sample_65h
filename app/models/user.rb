@@ -3,8 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :sns_credentials, dependent: :destroy
   devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :validatable,
+          :recoverable, :rememberable,
           :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+  devise  :validatable, password_length: 7..128
+  validates :nickname, :name_family, :name_first, :kana_family, :kana_first, :birthday, :tel, :profit ,presence: true
+  validates :tel, uniqueness: true
+  has_one :address
+
    def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
 
@@ -28,7 +33,7 @@ class User < ApplicationRecord
     end
 
    def self.with_sns_data(auth, snscredential)
-    user = User.where(id: snscredential.user_id).first
+    user = User.find(id: snscredential.user_id)
     unless user.present?
       user = User.new(
         nickname: auth.info.name,
@@ -41,7 +46,7 @@ class User < ApplicationRecord
    def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider
-    snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    snscredential = SnsCredential.find_by(uid: uid, provider: provider)
     if snscredential.present?
       user = with_sns_data(auth, snscredential)[:user]
       sns = snscredential
@@ -50,5 +55,8 @@ class User < ApplicationRecord
       sns = without_sns_data(auth)[:sns]
     end
     return { user: user ,sns: sns}
+  end
+
+  def login
   end
 end

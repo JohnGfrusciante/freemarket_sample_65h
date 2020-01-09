@@ -1,28 +1,30 @@
-.header
-  .header__inner
-    .header__inner__upper
-      .header__inner__upper__left
-        .header__inner__upper__left__logo
-          = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
-      .header__inner__upper__form
-        =form_with url: "#" do |f|
-          = f.text_field :content, class: 'header__inner__upper__form__area', placeholder: '何かお探しですか？'
-        .header__inner__upper__form__buttom
-    .header__inner__lower
-      .header__inner__lower__left
-        .header__inner__lower__left__categories
-          .header__inner__lower__left__categories__logo
-            = link_to "カテゴリーを探す"
-        .header__inner__lower__left__brands
-          .header__inner__lower__left__brands__logo
-            = link_to "ブランドを探す"
-      %ul.header__inner__lower__right
-        %li.header__inner__lower__right__content
-          = link_to "いいね一覧"
-        %li.header__inner__lower__right__content
-          = link_to "お知らせ"
-        %li.header__inner__lower__right__content
-          = link_to "やることリスト"
-        %li.header__inner__lower__right__content
-          = link_to "マイページ"
-  .header__img
+.wrapper
+  .header
+    .header__inner
+      .header__inner__upper
+        .header__inner__upper__left
+          .header__inner__upper__left__logo
+            =link_to root_path do
+              = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+        .header__inner__upper__form
+          =form_with url: "#" do |f|
+            = f.text_field :content, class: "header__inner__upper__form__area", placeholder: "何かお探しですか？"
+          .header__inner__upper__form__buttom
+      .header__inner__lower
+        .header__inner__lower__left
+          .header__inner__lower__left__categories
+            .header__inner__lower__left__categories__logo
+              = link_to "カテゴリーを探す"
+          .header__inner__lower__left__brands
+            .header__inner__lower__left__brands__logo
+              = link_to "ブランドを探す"
+        %ul.header__inner__lower__right
+          %li.header__inner__lower__right__content
+            = link_to "いいね一覧"
+          %li.header__inner__lower__right__content
+            = link_to "お知らせ"
+          %li.header__inner__lower__right__content
+            = link_to "やることリスト"
+          %li.header__inner__lower__right__content
+            =link_to "マイページ", mypages_path, method: :get
+      .header__img
