@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get 'done', to: 'users/registrations#done'
     post 'done', to: 'users/registrations#done'
   end
-  root to: "purchase#index"
+  root to: "items#index"
 
   resources :card, only: [:new, :show] do
     collection do
