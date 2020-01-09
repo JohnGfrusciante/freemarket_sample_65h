@@ -1,0 +1,11 @@
+%h2 電話番号認証
+= form_for @user,url: addresses_path, method: :post do |f|
+  = render "devise/shared/error_messages", resource: @user
+
+  .field
+    = f.label :"認証番号"
+    %br/
+    %input.text_field
+
+  .actions
+    = f.submit "Next"

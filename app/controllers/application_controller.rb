@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :basic_auth, if: :production?
 
+  rescue_from ActionController::RoutingError, with: :handle_404
+  rescue_from ActiveRecord::RecordNotFound,   with: :handle_404
+
   def production?
     Rails.env.production?
   end
@@ -14,6 +17,6 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :name_family, :name_first, :kana_family, :kana_first, :birthday, :tel, :profit])
   end
 end

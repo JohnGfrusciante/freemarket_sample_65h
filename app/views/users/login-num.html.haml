@@ -1,0 +1,29 @@
+.log-in-num
+  .log-in-num__head 認証番号の確認
+  .log-in-num__main
+    .log-in-num__main--word
+      ***_****-0000にSMSでお送りした6桁の認証番号を
+      %br
+      入力して下さい
+    %p 認証番号
+    = number_field :number, placeholder: "6桁の認証番号を入力"
+    .log-in-num__main--btn
+      = button_to "認証して完了"
+  .log-in-num__foot
+    .log-in-num__foot--word 60秒たっても認証番号が届かない方へ
+    %p 電話で認証番号を聞くこともできます。
+    .log-in-num__foot--btn
+      = button_to "電話で認証番号を聞く（通話無料）"
+    %p 認証番号を再送する事もできます。
+    .log-in-num__foot--btn
+      = button_to "認証番号を再送する）"
+      %p メールアドレスで認証することもできます。
+    .log-in-num__foot--btn
+      = button_to "メールアドレスで認証する"
+    .log-in-num__foot--caution
+      ※SMSが届かない場合は
+      = link_to "SMS受信設定"
+      を解除して、
+      %br
+      もう一度電話番号を入力して下さい。
+    

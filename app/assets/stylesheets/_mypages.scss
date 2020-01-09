@@ -1,0 +1,280 @@
+$white: #ffffff;
+$whitesmoke: #f5f5f5;
+$gainsboro: #dcdcdc;
+$black: #222222;
+$border-gainsboro: #dcdcdc 1px solid;
+$border-red: #EE0000 2px solid;
+
+.mypage{
+  background-color: $whitesmoke;
+  &__inner{
+    margin:  auto;
+    padding-bottom: 40px;
+    width: 1020px;
+    overflow: hidden;
+    &__nav{
+      float: left;
+      width: 280px;
+      margin: 0 40px 0 0;
+      &__head{
+        margin: 40px 0 0;
+      }
+      &__list{
+        width: 100%;
+        position: relative;
+        background-color: $white;
+        margin: 8px 0 0;
+        li{
+          position: relative;
+          display: block;
+          min-height: 48px;
+          padding: 16px;
+          background: $white;
+          font-size: 14px;
+          box-sizing: border-box;
+          border-bottom: $border-gainsboro;
+          &:hover {
+            background-color: $gainsboro;
+            padding-right: 12px;
+            transition: padding-right 0.25s;
+            .icon{
+              color: $black;
+            }
+          }
+        a{
+          color: $black;
+          
+        }
+
+        .icon{
+          position: absolute;
+          right: 15px;
+          color: $gainsboro;
+        }
+        }
+      }
+    }
+    &__main{
+      float: right;
+      margin-top: 8px;
+      width: calc(100% - 320px);
+      position: relative;
+      &__contents{
+      }
+      .user{
+        background-image: url(/user-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        height: 200px;
+        width: 100%;
+        &__link{
+          display: block;
+          position: absolute;
+          top: 50px;
+          left: 0;
+          right: 0;
+          img{
+          border-radius: 50%;
+          height: 60px;
+          width: 60px;
+          margin: 0 auto;
+          }
+          &__nickname{
+
+          }
+          &__review{
+            display: flex;
+            justify-content: center;
+            div{
+              font-size: 13px;
+              margin: 8px;
+              span{
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+      .tab-panel1{
+        .tab-group1 {
+          display: flex;
+          justify-content: center;
+          .tab1 {
+            flex-grow: 1;
+            padding: 5px;
+            list-style: none;
+            border: $border-gainsboro;
+            border-bottom: none;
+            text-align: center;
+            cursor: pointer;
+            background-color: $gainsboro;
+            line-height: 72px;
+          }
+        }
+        .panel-group {
+          height: 100%;
+          border: $border-gainsboro;
+          border-top: none;
+          background: $whitesmoke;
+          .panel1 {
+            display: none;
+            .menu{
+              border-bottom: $border-gainsboro;
+              &__inner{
+                display: block;
+                min-height: 80px;
+                padding: 16px;
+                color: $black;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                &__content{
+                  display: flex;
+                  width: 100%;
+                  position: relative;
+                  img{
+                    height: 50px;
+                    width: 50px;
+                    line-height: 60px;
+                  }
+                  a{
+                    margin: 0 40px 0 8px;
+                    overflow: hidden;
+                    display: block;
+                    max-height: 4.4em;
+                    line-height: 1.5;
+                    color: $black;
+                  }
+                  i{
+                    position: absolute;
+                    right: 0px;
+                  }
+                }
+                &__contentB{
+                  height: 300px;
+                  margin: 0 auto;
+                  img{
+                    height: 200px;
+                    width: 200px;
+                  }
+                  p{
+                    color: $gainsboro;
+                  }
+                }
+              }
+            }
+            .all{
+              padding: 16px;
+              &__inner{
+                display: block;
+                height: 56px;
+                margin: 0 auto;
+                background: $gainsboro;
+                color: $black;
+                line-height: 56px;
+                text-align: center;
+                cursor: pointer;
+                a{
+                  color: $black;
+                }
+              }
+            }
+          }
+        }
+        .tab1.is-active1 {
+          background: $white;
+          color: $black;
+          border-top:$border-red;
+        }
+        .panel1.is-show1 {
+          display: block;
+          background-color: $white;
+        }
+      }
+      .tab-panel2{
+        position: relative;
+        border: $border-gainsboro;
+        margin-top: 30px;
+        &__head{
+          width: 100%;
+          background: $white;
+          line-height: 72px;
+          p{
+            font-size: 15px;
+            padding: 15px;
+            box-sizing: border-box;
+          }
+        }
+        .tab-group2 {
+          display: flex;
+          justify-content: center;
+          .tab2 {
+            flex-grow: 1;
+            padding: 5px;
+            list-style: none;
+            border: border;
+            border-bottom: none;
+            text-align: center;
+            cursor: pointer;
+            background-color: $gainsboro;
+            line-height: 72px;
+          }
+        }
+        .panel-group {
+          height: 100%;
+          border: $border-gainsboro;
+          border-top: none;
+          background: $whitesmoke;
+          .panel2 {
+            display: none;
+            .menu{
+              border-bottom: $border-gainsboro;
+              &__inner{
+                display: block;
+                min-height: 80px;
+                padding: 16px;
+                color: $black;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                
+                &__content{
+                  height: 300px;
+                  margin: 0 auto;
+                  img{
+                    height: 200px;
+                    width: 200px;
+                  }
+                  p{
+                    color: $gainsboro;
+                  }
+                }
+                &__contentB{
+                  height: 300px;
+                  margin: 0 auto;
+                  img{
+                    height: 200px;
+                    width: 200px;
+                  }
+                  p{
+                    color: $gainsboro;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .tab2.is-active2 {
+          background: $white;
+          color: $black;
+          border-top:$border-red;
+        }
+        .panel2.is-show2 {
+          display: block;
+          background-color: white;
+        }
+      }
+    }
+  }
+}
