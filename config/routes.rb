@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
   }  
-  root to: "purchase#index"
+  root to: "items#index"
   resources :items, only: [:show, :index, :new, :edit, :update] do
   end
 
