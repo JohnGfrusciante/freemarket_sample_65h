@@ -1,0 +1,18 @@
+.logout{
+  background-color: #fff;
+  margin: 9px 0 0 300px;
+  padding: 60px 50px;
+  &__btn{
+    max-width: 320px;
+    margin: 0 auto;
+    input{
+      width: 100%;
+      padding: 5px 50px;
+      border: 1px solid #ea352d;
+      background-color: #ea352d;
+      color: #fff;
+      line-height: 40px;
+      border-radius: 4px;
+    }
+  }
+}

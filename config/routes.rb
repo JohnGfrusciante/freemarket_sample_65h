@@ -18,10 +18,11 @@ Rails.application.routes.draw do
     post 'credit', to: 'users/registrations#credit'
     get 'done', to: 'users/registrations#done'
     post 'done', to: 'users/registrations#done'
+    get 'logout', to: "users#logout"
   end
   root to: "items#index"
-  resources :mypages, path: 'mypage'
-  resources :items  do
+  resources :mypages
+  resources :items do
     resources :item_images, only: [:create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
