@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
     }
+  
   devise_scope :user do
     get 'email', to: 'users/registrations#email'
     post 'email', to: 'users/registrations#email'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
     post 'done', to: 'users/registrations#done'
   end
   root to: "items#index"
+  resources :mypages, path: 'mypage'
   resources :items  do
     resources :item_images, only: [:create]
   end

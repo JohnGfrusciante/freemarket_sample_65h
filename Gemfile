@@ -99,6 +99,7 @@ gem 'dotenv-rails'
 
 gem 'pry-rails'
 gem 'fog-aws'
+gem 'jquery-turbolinks'
 gem 'jquery-rails'
 gem 'execjs'
 gem 'gon'

@@ -3,9 +3,11 @@
   font-family: 'arial unicode ms';
   font-size: 14px;
   background-color: rgb(245, 245, 245);
+  a{
+    color: black;
+  }
   .header{
     width: 100%;
-    border: 1px red solid;
     position: relative;
     top: 0px;
     background-color: white;
