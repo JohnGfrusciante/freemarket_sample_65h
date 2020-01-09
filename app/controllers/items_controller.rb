@@ -46,7 +46,15 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item.destroy
+    images = ItemImage.find(params[:id])
+    if @item.destroy
+      redirect_to root_path, notice: '商品情報を削除しました'
+      if images.present?
+        images.destroy
+      end
+    else
+      render :edit, notice: '削除に失敗しました'
+    end
   end
 
   private
