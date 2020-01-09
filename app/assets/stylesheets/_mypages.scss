@@ -97,7 +97,7 @@ $border-red: #EE0000 2px solid;
         }
       }
       .tab-panel1{
-        .tab-group {
+        .tab-group1 {
           display: flex;
           justify-content: center;
           .tab1 {
@@ -206,7 +206,7 @@ $border-red: #EE0000 2px solid;
             box-sizing: border-box;
           }
         }
-        .tab-group {
+        .tab-group2 {
           display: flex;
           justify-content: center;
           .tab2 {
@@ -265,14 +265,14 @@ $border-red: #EE0000 2px solid;
             }
           }
         }
-          .tab2.is-active2 {
-            background: $white;
-            color: $black;
-            border-top: $border-red;
-          }
-          .panel2.is-show2 {
-            display: block;
-            background-color: white;
+        .tab2.is-active2 {
+          background: $white;
+          color: $black;
+          border-top:$border-red;
+        }
+        .panel2.is-show2 {
+          display: block;
+          background-color: white;
         }
       }
     }

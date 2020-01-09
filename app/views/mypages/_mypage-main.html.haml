@@ -12,7 +12,7 @@
             出品数
             %span 0
     .tab-panel1
-      %ul.tab-group
+      %ul.tab-group1
         %li.tab1.tab-A.is-active1 お知らせ
         %li.tab1.tab-B やることリスト
       .panel-group
@@ -63,7 +63,7 @@
     .tab-panel2
       .tab-panel2__head 
         %p 購入した商品
-      %ul.tab-group
+      %ul.tab-group2
         %li.tab2.tab-A.is-active2 取引中
         %li.tab2.tab-B 過去の取引
       .panel-group
@@ -72,12 +72,11 @@
             .menu__inner
               .menu__inner__content
                 = image_tag ("/logo_gray.svg")
-                %p 現在、やることリストはありません
+                %p 取引中の商品がありません
 
         %ul.panel2.tab-B
           %li.menu
             .menu__inner
               .menu__inner__contentB
                 = image_tag ("/logo_gray.svg")
-                %p 現在、やることリストはありません
-
+                %p 過去に取引した商品がありません
