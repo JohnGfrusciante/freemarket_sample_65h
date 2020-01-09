@@ -23,8 +23,6 @@ Rails.application.routes.draw do
   root to: "items#index"
   resources :mypages
   resources :profiles
-  resources :items  do
-  resources :mypages
   resources :items do
     resources :item_images, only: [:create]
   end
