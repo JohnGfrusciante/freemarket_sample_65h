@@ -8,6 +8,7 @@
       購入内容の確認
     .confirm__item
       .confirm__item__image
+        = image_tag "#{@image[0].image}", class: "confirm__item__image"
       .confirm__item__params
         .confirm__item__params__name
           #{@item.name}
