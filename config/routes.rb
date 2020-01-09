@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
   root to: "items#index"
   resources :mypages
+  resources :profiles, only:[:index]
   resources :items do
     resources :item_images, only: [:create]
   end

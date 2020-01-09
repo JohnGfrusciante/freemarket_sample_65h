@@ -55,7 +55,7 @@
   .mypage__inner__nav__head 設定
   %ul.mypage__inner__nav__list
     %li
-      = link_to "プロフィール"
+      =link_to "プロフィール", profiles_path, method: :get
       = icon("fas", "chevron-right", class: "icon")
     %li
       = link_to "住所変更"
