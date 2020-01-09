@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :configure_sign_up_params, only: [:tel]
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -10,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    # super
+
   end
 
 def create
@@ -33,9 +34,49 @@ def create
   end
 end
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+
+  end
+
+  def email
+    @user = User.new
+  end
+
+  def tel
+    @user = User.new(sign_up_params)
+    session["devise.regist_data"] = {user: @user.attributes}
+    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+  end
+
+  def authen
+    session["devise.regist_data"]["user"]["tel"] = params[:user][:tel]
+    @user = User.new(session["devise.regist_data"]["user"])
+    unless @user.valid?
+      flash.now[:alert] = @user.errors.full_messages
+      render :email and return
+    end
+  end
+
+  def address
+    @address = Address.new
+  end
+
+  def credit
+    @user = User.new(session["devise.regist_data"]["user"])
+    @address = Address.new(address_params)
+    unless @address.valid?
+      flash.now[:alert] = @address.errors.full_messages
+      render :address and return
+    end
+    session["devise.regist_data"][:address] = (@address.attributes)
+  end
+
+  def done
+    @user = User.new(session["devise.regist_data"]["user"])
+    @user.build_address(session["devise.regist_data"]["address"])
+    @user.save
+    sign_in(:user, @user)
+  end
 
   # GET /resource/edit
   # def edit
@@ -64,9 +105,13 @@ end
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  end
+
+  def address_params
+    params.require(:address).permit(:name_family, :name_first, :kana_family, :kana_first, :postal_code, :prefecture, :municipality, :house_number, :building, :tel)
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

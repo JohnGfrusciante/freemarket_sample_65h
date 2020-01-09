@@ -1,0 +1,11 @@
+%h2 電話番号の確認
+= form_for @user,url: authen_path, method: :post do |f|
+  = render "devise/shared/error_messages", resource: @user
+
+  .field
+    = f.label :"携帯電話の番号 必須"
+    %br/
+    = f.text_field :tel, autofocus: true, autocomplete: "tel"
+
+  .actions
+    = f.submit "Next"

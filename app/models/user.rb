@@ -3,8 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :sns_credentials, dependent: :destroy
   devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :validatable,
+          :recoverable, :rememberable,
           :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+  devise  :validatable, password_length: 7..128
+  validates :nickname, :name_family, :name_first, :kana_family, :kana_first, :birthday, :tel, :profit ,presence: true
+  validates :tel, uniqueness: true
+  has_one :address
 
    def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
