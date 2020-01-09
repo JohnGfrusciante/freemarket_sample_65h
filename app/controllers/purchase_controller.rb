@@ -1,8 +1,8 @@
 class PurchaseController < ApplicationController
   require 'payjp'
+  before_action :set_item, only: [:index, :pay]
 
   def index
-    @item = Item.find(2)
     @image = @item.item_images.where(item_id: @item.id)
 
   # item_idの値が同じレコードを取得
@@ -26,7 +26,6 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    @item = Item.find(2)
     card = Card.where(user_id: 8).first
 # card = Card.where(user_id: current_user.id).first
 
@@ -37,5 +36,9 @@ class PurchaseController < ApplicationController
     :currency => 'jpy', #日本円
     )
     render :done
+  end
+
+  def set_item
+    @item = Item.find(2)
   end
 end
