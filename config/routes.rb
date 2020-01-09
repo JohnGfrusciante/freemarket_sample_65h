@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
-  get 'purchase/index'
-  get 'purchase/done'
-  get 'card/new'
-  get 'card/show'
   devise_for :users,
   controllers: {
     sessions: 'users/sessions',
     registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
   }  
-  root to: "items#index"
+  root to: "purchase#index"
   resources :items, only: [:show, :index, :new, :edit, :update] do
   end
 
@@ -22,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchase, only: [:index] do
+  resources :purchase, only: [:index, :done] do
     collection do
       get 'index', to: 'purchase#index'
       get 'pay', to: 'purchase#pay'
