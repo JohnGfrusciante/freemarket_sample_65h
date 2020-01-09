@@ -2,7 +2,10 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
-    # item = Item.all()
+    @item= Item.find(1)
+    # @item_image = @item.item_image.where(:item_id "")
+  # item_idの値が同じレコードを取得
+
     card = Card.where(user_id: 8).first
 # card = Card.where(user_id: current_user.id).first
 

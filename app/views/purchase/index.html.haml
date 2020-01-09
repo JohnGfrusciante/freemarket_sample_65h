@@ -10,14 +10,14 @@
       .confirm__item__image
       .confirm__item__params
         .confirm__item__params__name
-          Abag
+          #{@item.name}
         .confirm__item__params__price
-          ¥5000 (税込) 送料込み
+          ¥#{@item.price.to_s(:delimited)}
     .confirm__price
       .confirm__price__payment
         支払い金額
         .confirm__price__payment--price
-          ¥5000
+          ¥#{@item.price.to_s(:delimited)}
       .confirm__price__point
         = check_box_tag :test, class: "check_box"
         = label_tag :test, "ポイントを使用(所持ポイント：P0)"
