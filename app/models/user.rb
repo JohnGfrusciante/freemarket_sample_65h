@@ -56,4 +56,7 @@ class User < ApplicationRecord
     end
     return { user: user ,sns: sns}
   end
+
+  def login
+  end
 end

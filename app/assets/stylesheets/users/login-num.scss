@@ -1,0 +1,67 @@
+.log-in-num{
+  background-color: #fff;
+  max-width: 380px;
+  margin: 0 auto;
+  &__head{
+  padding: 24px 32px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  }
+  &__main{
+    padding: 24px 32px;
+    text-align: center;
+    &--word{
+      font-size: 12px;
+    }
+    p{
+      margin-right: 250px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    input{
+      width: 100%;
+      height: 40px;
+      border-radius: 4px;
+    }
+    &--btn{
+      margin-top: 20px;
+      input{
+        background-color: #ea352d;
+        color: #fff;
+        padding: 28px;
+        line-height: 0;
+      }
+    }
+  }
+  &__foot{
+    padding: 24px 32px;
+    text-align: center;
+    &--word{
+      font-weight: bold;
+      font-size: 12px;
+      display: flex;
+    }
+    p{
+      margin-top: 25px;
+      display: flex;
+      font-size: 14px;
+    }
+    input{
+      background-color: #aaa;
+      color: #fff;
+      padding: 28px;
+      line-height: 0;
+      width: 100%;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    &--caution{
+      font-size: 12px;
+      margin: 10px 0;
+      a{
+        color: #0099e8;
+      }
+    }
+  }
+}
