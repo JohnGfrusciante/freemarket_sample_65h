@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    images = ItemImage.find(params[:id])
+    images = @item.item_images.where(params[:id])
     if @item.destroy
       redirect_to root_path, notice: '商品情報を削除しました'
       if images.present?
