@@ -20,9 +20,10 @@ Rails.application.routes.draw do
     post 'done', to: 'users/registrations#done'
   end
   root to: "items#index"
-  resources :mypages, path: 'mypage'
-  resources :items  do
+  resources :mypages
+  resources :items do
     resources :item_images, only: [:create]
   end
+  get '/logout', to: "users#logout"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
