@@ -20,8 +20,8 @@ Rails.application.routes.draw do
     post 'done', to: 'users/registrations#done'
   end
   root to: "items#index"
-  resources :mypages, path: 'mypage'
-  resources :profiles, path: 'profile'
+  resources :mypages
+  resources :profiles
   resources :items  do
     resources :item_images, only: [:create]
   end
