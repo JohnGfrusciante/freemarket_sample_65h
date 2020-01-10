@@ -2,13 +2,13 @@
   .mypage__inner__main__top
     %p プロフィール
   =form_with url: "#" do |f|
-    .mypage__inner__main__user
-      .mypage__inner__main__user__img
+    .user
+      .user__img
         = image_tag ("/582642681.jpg")
-      .mypage__inner__main__user__name
-        = f.text_field :content, class: "mypage__inner__main__user__name__area", placeholder: "Masanori"
-    .mypage__inner__main__middle
-      .mypage__inner__main__middle__form
-        = f.text_area :content, class: "mypage__inner__main__middle__form__area", placeholder: "例)こんにちは☆ごらんいただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
-    .mypage__inner__main__btn
+      .user__name
+        = f.text_field :content, class: "user__name__area", placeholder: "Masanori"
+    .middle
+      .middle__form
+        = f.text_area :content, class: "middle__form__area", placeholder: "例)こんにちは☆ごらんいただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+    .button
       %button.btn{:type => "submit"} 変更する

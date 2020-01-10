@@ -4,9 +4,10 @@
   font-size: 30px;
   display: flex;
 	align-items: center;
-	justify-content: center;
+  justify-content: center;
+  border-bottom: $border-gainsboro;
 }
-.mypage__inner__main__user{
+.user{
   background-color: $white;
   border: red 1px solid;
   display: flex;
@@ -30,7 +31,7 @@
     }
   }
 }
-.mypage__inner__main__middle{
+.middle{
   background-color: $white;
   &__form{
     padding: 40px 16px;
@@ -43,12 +44,11 @@
     }
   }
 }
-.mypage__inner__main__btn{
+.button{
   background-color: $white;
   height: 80px;
   padding: 40px 16px;
   .btn{
-    
     background-color: red;
     width: 100%;
     border: none;
