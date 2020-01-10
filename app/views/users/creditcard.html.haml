@@ -1,0 +1,17 @@
+= render "items/header"
+.mypage
+  .mypage__inner
+    = render "mypages/mypage-sidebar"
+    .credit
+      .credit__head 支払い方法
+      .credit__main
+        .credit__main--word クレジットカード一覧
+        .credit__main--btn
+          %label
+            = icon('far', 'credit-card', class: 'icon')
+            = button_to "クレジットカードを追加する", cardregister_path, method: "get"
+      .credit__foot
+        .credit__foot--link
+          = link_to "支払い方法について ＞"
+= render "items/aside"
+= render "items/footer"
