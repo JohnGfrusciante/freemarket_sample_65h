@@ -298,6 +298,7 @@
         }
       }
       &__new-arrivals{
+        margin-bottom: 50px;
         &__upper{
           align-items: flex-end;
           display: flex;
@@ -336,6 +337,8 @@
                   border-radius: 0 14px 14px 0;
                   bottom: 8px;
                   position: absolute;
+                  padding: 0 10px;
+                  color: #fff;
                 }
               }
               &__name{
@@ -394,6 +397,9 @@
       &__content{
         height: 31px;
         width: 124px;
+        img{
+          filter: brightness(200);
+        }
       }
       &__copy-right{
         text-align: center;

@@ -237,6 +237,27 @@
     &__buy{
       background-color: #E9352D;
       height: 50px;
+      margin-bottom: 10px; 
+      &__btn{
+        line-height: 50px;
+        height: 50px;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        display: block;
+      }
+    }
+    p{
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    &__delete{
+      background-color: #aaa;
+      height: 50px;
+      margin-bottom: 10px;
       &__btn{
         line-height: 50px;
         height: 50px;
@@ -257,6 +278,7 @@
 
     &__text{
       margin: 20px auto;
+      white-space: pre;
     }
     &__bottom_btn{
       height: 40px;

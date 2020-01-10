@@ -33,7 +33,7 @@
             発送日の目安
         .tb_right
           .tb_right__name
-            = link_to "{@seller_name.nickname}", "/", id: "link_tb_right"
+            = link_to "#{@seller_name.nickname}", "/", id: "link_tb_right"
             .value_icon
               .value_icon--good
                 = icon("fas", "grin-alt", style: "color:pink", class: "value_icon--icon")
@@ -76,10 +76,12 @@
 
     .item__buy
       = link_to '購入画面へ進む', "/", class: "item__buy__btn"
-    .item__buy
-      = link_to '商品の編集', edit_item_path, class: "item__buy__btn"
-    .item__buy
-      = link_to '商品の削除',item_path, method: :delete, class: "item__buy__btn"
+    - if @item.seller_id == current_user.id
+      %p or
+      .item__buy
+        = link_to '商品の編集', edit_item_path, class: "item__buy__btn"
+      .item__delete
+        = link_to '商品の削除',item_path, method: :delete, class: "item__buy__btn"
 
     .buy_note
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
