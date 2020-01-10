@@ -29,6 +29,8 @@ class PurchaseController < ApplicationController
     end
   end
 
+  private
+
   def set_card
     @card = Card.find_by(user_id: 8)
   end

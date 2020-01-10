@@ -24,11 +24,10 @@ Rails.application.routes.draw do
   end
   root to: "items#index"
 
-  resources :card, only: [:new, :show] do
+  resources :card, only: [:new, :show, :destroy] do
     collection do
       post 'get', to: 'card#pay'
       post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
     end
   end
 
