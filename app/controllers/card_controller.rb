@@ -3,7 +3,10 @@ class CardController < ApplicationController
   before_action :set_card, only: [:new, :delete, :show]
 
   def new
-    redirect_to action: "show" if @card.presence
+    if @card.presence
+      get_card_params
+      render("card/show")
+    end
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
@@ -39,13 +42,17 @@ class CardController < ApplicationController
     if @card.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = ENV["PAYJP_TEST_S_KEY"]
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      @default_card_information = customer.cards.retrieve(@card.card_id)
+      get_card_params
     end
   end
 
   def set_card
     @card = Card.find_by(user_id: 8)
+  end
+
+  def get_card_params
+    Payjp.api_key = ENV["PAYJP_TEST_S_KEY"]
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 end
