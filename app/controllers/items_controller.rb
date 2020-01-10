@@ -17,8 +17,12 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
-    @item.item_images.new
+    if user_signed_in?
+      @item = Item.new
+      @item.item_images.new
+    else
+      redirect_to root_path, alert: "サインインして下さい"
+    end
   end
 
   def create
@@ -27,7 +31,7 @@ class ItemsController < ApplicationController
       redirect_to root_path, notice: '商品を出品しました'
     else
       render :new, notice: '商品情報の保存に失敗しました'
-    end 
+    end
   end
 
   def edit
@@ -57,7 +61,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :discription, :price, :condition, :shipping_charge, :shipping_date, :prefecture, item_images_attributes: [:id, :image, :_destroy])
+    params.require(:item).permit(:name, :discription, :price, :condition, :shipping_charge, :shipping_date, :prefecture, item_images_attributes: [ :image, :_destroy]).merge(seller_id: current_user.id)
   end
 
   def set_item

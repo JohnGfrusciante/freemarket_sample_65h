@@ -1,0 +1,45 @@
+= render "items/header"
+.mypage
+  .mypage__inner
+    = render "mypages/mypage-sidebar"
+    .register
+      .register__head クレジットカード情報入力
+      .register__main
+        .register__main--word
+          %p.bold
+            カード番号
+          %p.red-solid
+            必須
+        .register__main--field
+          %input
+        .register__main--icon
+          = icon('fab', 'cc-visa', class: 'icon')
+          = icon('fab', 'cc-amazon-pay', class: 'icon')
+          = icon('fab', 'cc-discover', class: 'icon')
+          = icon('fab', 'cc-jcb', class: 'icon')
+          = icon('fab', 'cc-amex', class: 'icon')
+          = icon('fab', 'cc-diners-club', class: 'icon')
+          = icon('fab', 'cc-discover', class: 'icon')
+        .register__main--word
+          %p.bold
+            有効期限
+          %p.red-solid
+            必須
+        .register__main--date
+          = select_tag :date,options_for_select([["02", "02"],["03", "03"],["04", "04"],["05", "05"],["06", "06"],["07", "07"],["08", "08"],["09", "09"],["10", "10"],["11", "11"],["12", "12"]]), prompt: "01"
+          %p 月
+          = select_tag :date,options_for_select([["20", "20"],["21", "21"],["22", "22"],["23", "23"],["24", "24"],["25", "25"],["26", "26"],["27", "27"],["28", "28"],["29", "29"],["30", "30"]]), prompt: "20"
+          %p 年
+        .register__main--word
+          %p.bold
+            セキュリティコード
+          %p.red-solid
+            必須
+        .register__main--field
+          %input
+        .register__main--link
+          = link_to "カード裏面の番号とは?"
+        .register__main--btn
+          = button_to "追加する"
+= render "items/aside"
+= render "items/footer"

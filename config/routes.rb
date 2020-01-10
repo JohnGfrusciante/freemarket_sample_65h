@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     get 'done', to: 'users/registrations#done'
     post 'done', to: 'users/registrations#done'
     get 'logout', to: "users#logout"
+    get 'creditcard', to: "users#creditcard"
+    get 'cardregister', to: "users#cardregister"
   end
   root to: "items#index"
   resources :mypages
