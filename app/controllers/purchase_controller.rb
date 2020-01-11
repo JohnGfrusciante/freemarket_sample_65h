@@ -12,6 +12,7 @@ class PurchaseController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
+    @item.update(buyer_id: current_user.id, transaction_status: 1)
   end
 
   def pay
@@ -39,4 +40,5 @@ class PurchaseController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
   end
+
 end

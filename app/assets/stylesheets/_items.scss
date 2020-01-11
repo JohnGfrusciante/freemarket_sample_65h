@@ -331,6 +331,21 @@
                 img{
                   height: 188px;
                 }
+                &--sold{
+                  position: absolute;
+                  top: 0;
+                  border-top: 40px solid #ea352d;
+                  border-right: 40px solid transparent;
+                  border-bottom: 40px solid transparent;
+                  border-left: 40px solid #ea352d;
+                }
+                &--word{
+                  position: absolute;
+                  top:13px;
+                  transform: rotate(-45deg);
+                  font-size: 20px;
+                  color: #fff;
+                }
                 &__price{
                   align-items: center;
                   background: rgba(0,0,0,.4);

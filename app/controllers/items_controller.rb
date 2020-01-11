@@ -35,6 +35,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @tax = (@item.price * 0.1).to_i
+    @profit = (@item.price * 0.9).to_i
     if @item.present?
       render :edit
     else
