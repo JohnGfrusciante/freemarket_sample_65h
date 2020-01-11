@@ -1,10 +1,10 @@
 class PurchaseController < ApplicationController
   require 'payjp'
   before_action :set_card, only: [:index, :pay]
+  before_action :set_item, only: [:index, :pay]
 
 
   def index
-    @item = Item.find(2)
     @image = @item.item_images.where(item_id: @item.id)
     if @card.blank?
     else
@@ -16,7 +16,6 @@ class PurchaseController < ApplicationController
 
   def pay
     if @card.presence
-      @item = Item.find(2)
       Payjp.api_key = ENV['PAYJP_TEST_S_KEY']
       Payjp::Charge.create(
       :amount => @item.price,
@@ -33,5 +32,9 @@ class PurchaseController < ApplicationController
 
   def set_card
     @card = Card.find_by(user_id: 8)
+  end
+
+  def set_item
+    @item = Item.find(1)
   end
 end
