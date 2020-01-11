@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
+
     }
   
   devise_scope :user do
@@ -23,6 +25,22 @@ Rails.application.routes.draw do
     get 'cardregister', to: "users#cardregister"
   end
   root to: "items#index"
+
+  resources :card, only: [:new, :show, :destroy] do
+    collection do
+      post 'get', to: 'card#pay'
+      post 'pay', to: 'card#pay'
+    end
+  end
+
+  resources :purchase, only: [:index] do
+    collection do
+      get 'pay', to: 'purchase#pay'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
+  
   resources :mypages
   resources :profiles, only:[:index]
   resources :informations, only:[:index]

@@ -1,0 +1,4 @@
+%h2 購入が完了しました！
+#{@item.name}
+¥#{@item.price.to_s(:delimited)}(送料込み)
+= link_to "商品一覧へ", "/"
