@@ -15,6 +15,8 @@ class PurchaseController < ApplicationController
   end
 
   def pay
+    # @item = Item.find(params[:item_id])
+
     if @card.presence
       Payjp.api_key = ENV['PAYJP_TEST_S_KEY']
       Payjp::Charge.create(
@@ -31,10 +33,10 @@ class PurchaseController < ApplicationController
   private
 
   def set_card
-    @card = Card.find_by(user_id: 8)
+    @card = Card.find_by(user_id: current_user.id)
   end
 
   def set_item
-    @item = Item.find(1)
+    @item = Item.find(params[:item_id])
   end
 end
