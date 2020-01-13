@@ -1,11 +1,50 @@
-%h2 電話番号認証
-= form_for @user,url: addresses_path, method: :post do |f|
-  = render "devise/shared/error_messages", resource: @user
+.authenPage
+  .authenPage__body
+    .authenPage__body__header
+      %h1
+        = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+      %ol.authenPage__body__header__nav
+        %li.authenPage__body__header__nav--email
+          会員情報
+          .authenPage__body__header__nav--email--point
+          .authenPage__body__header__nav--email--line
 
-  .field
-    = f.label :"認証番号"
-    %br/
-    %input.text_field
+        %li.authenPage__body__header__nav--tel
+          電話番号認証
+          .authenPage__body__header__nav--tel--point
+          .authenPage__body__header__nav--tel--line
 
-  .actions
-    = f.submit "Next"
+        %li.authenPage__body__header__nav--address
+          お届け先住所入力
+          .authenPage__body__header__nav--address--point
+          .authenPage__body__header__nav--address--line
+
+        %li.authenPage__body__header__nav--credit
+          支払い方法
+          .authenPage__body__header__nav--credit--point
+          .authenPage__body__header__nav--credit--line
+
+        %li.authenPage__body__header__nav--done
+          完了
+          .authenPage__body__header__nav--done--point
+
+
+    .authenPage__body__main
+      .authenPage__body__main__title
+        電話番号認証
+
+      .authenPage__body__main__formArea
+        = form_for @user,url: addresses_path, method: :post do |f|
+          = render "devise/shared/error_messages", resource: @user
+
+          .authenPage__body__main__formArea__authen
+            .authenPage__body__main__formArea__authen__title
+              認証番号
+              %br/
+              %input.text_field{placeholder: "認証番号を入力"}
+
+          .authenPage__body__main__formArea__submit
+            = f.submit "認証して完了"
+
+
+    = render 'regist_footer'
