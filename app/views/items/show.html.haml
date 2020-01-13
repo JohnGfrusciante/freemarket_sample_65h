@@ -1,3 +1,5 @@
+= render 'header'
+
 .show
   .item
     .item__name
@@ -220,4 +222,6 @@
 
   .show_footer
     = link_to 'メルカリ ', "/", id: "link_to_set"
-    ＞ 商品名
+    ＞ #{@item.name}
+
+= render 'footer'
