@@ -2,6 +2,7 @@ class PurchaseController < ApplicationController
   require 'payjp'
   before_action :set_card, only: [:index, :pay]
   before_action :set_item, only: [:index, :pay]
+  before_action :check_seller, only: [:index, :pay]
 
 
   def index
@@ -41,4 +42,9 @@ class PurchaseController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
+  def check_seller
+    if @item.seller_id == current_user.id
+      redirect_to item_path(@item.id)
+    end
+  end
 end
