@@ -234,6 +234,14 @@
       }
     }
 //購入ボタン///////////////////////////////////////
+    &__sold{
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 20px 0;
+      border: 1px solid orange;
+      background-color: orange;
+    }
     &__buy{
       background-color: #E9352D;
       height: 50px;
