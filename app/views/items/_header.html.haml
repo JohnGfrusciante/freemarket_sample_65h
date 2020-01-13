@@ -26,5 +26,9 @@
           %li.header__inner__lower__right__content
             = link_to "やることリスト"
           %li.header__inner__lower__right__content
-            =link_to "マイページ", mypages_path, method: :get
+            - if user_signed_in?
+              = link_to "マイページ", mypages_path, method: :get
+            - else
+              = link_to "マイページ", '/users/sign_up'
+
       .header__img

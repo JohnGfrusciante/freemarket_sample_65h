@@ -1,4 +1,11 @@
-%a.sell-btn{href: "items/new"}
-  %div.sell-btn__word 出品
-  .sell-btn__icon
-    = icon('fas', 'camera')
+
+- if user_signed_in?
+  %a.sell-btn{href: "items/new"}
+    %div.sell-btn__word 出品
+    .sell-btn__icon
+      = icon('fas', 'camera')
+- else
+  %a.sell-btn{href: "/users/sign_up"}
+    %div.sell-btn__word 出品
+    .sell-btn__icon
+      = icon('fas', 'camera')
