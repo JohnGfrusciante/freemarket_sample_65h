@@ -1,11 +1,51 @@
-%h2 電話番号の確認
-= form_for @user,url: authen_path, method: :post do |f|
-  = render "devise/shared/error_messages", resource: @user
+.telPage
+  .telPage__body
+    .telPage__body__header
+      %h1
+        = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+      %ol.telPage__body__header__nav
+        %li.telPage__body__header__nav--email
+          会員情報
+          .telPage__body__header__nav--email--point
+          .telPage__body__header__nav--email--line
 
-  .field
-    = f.label :"携帯電話の番号 必須"
-    %br/
-    = f.text_field :tel, autofocus: true, autocomplete: "tel"
+        %li.telPage__body__header__nav--tel
+          電話番号認証
+          .telPage__body__header__nav--tel--point
+          .telPage__body__header__nav--tel--line
 
-  .actions
-    = f.submit "Next"
+        %li.telPage__body__header__nav--address
+          お届け先住所入力
+          .telPage__body__header__nav--address--point
+          .telPage__body__header__nav--address--line
+
+        %li.telPage__body__header__nav--credit
+          支払い方法
+          .telPage__body__header__nav--credit--point
+          .telPage__body__header__nav--credit--line
+
+        %li.telPage__body__header__nav--done
+          完了
+          .telPage__body__header__nav--done--point
+
+
+    .telPage__body__main
+      .telPage__body__main__title
+        電話番号の確認
+
+      .telPage__body__main__formArea
+        = form_for @user,url: authen_path, method: :post do |f|
+          = render "devise/shared/error_messages", resource: @user
+
+          .telPage__body__main__formArea__tel
+            .telPage__body__main__formArea__tel__title
+              携帯電話の番号
+            .telPage__body__main__formArea__tel__required
+              必須
+          = f.text_field :tel, autofocus: true, autocomplete: "tel", placeholder: "携帯電話の番号を入力"
+
+          .telPage__body__main__formArea__submit
+            = f.submit "SMSを送信する"
+
+
+    = render 'regist_footer'

@@ -1,40 +1,95 @@
-%h2 会員情報入力
-= form_for(@user, url: tel_path) do |f|
-  = render "devise/shared/error_messages", resource: @user
-  .field
-    = f.label :"ニックネーム 必須"
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :"メールアドレス 必須"
-    %br/
-    = f.email_field :email, autocomplete: "email"
-  .field
-    = f.label :"パスワード 必須"
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
+.emailPage
+  .emailPage__body
+    .emailPage__body__header
+      %h1
+        = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+      %ol.emailPage__body__header__nav
+        %li.emailPage__body__header__nav--email
+          会員情報
+          .emailPage__body__header__nav--email--point
+          .emailPage__body__header__nav--email--line
+
+        %li.emailPage__body__header__nav--tel
+          電話番号認証
+          .emailPage__body__header__nav--tel--point
+          .emailPage__body__header__nav--tel--line
+
+        %li.emailPage__body__header__nav--address
+          お届け先住所入力
+          .emailPage__body__header__nav--address--point
+          .emailPage__body__header__nav--address--line
+
+        %li.emailPage__body__header__nav--credit
+          支払い方法
+          .emailPage__body__header__nav--credit--point
+          .emailPage__body__header__nav--credit--line
+
+        %li.emailPage__body__header__nav--done
+          完了
+          .emailPage__body__header__nav--done--point
 
 
-  .field
-    = f.label :"お名前(全角) 必須"
-    %br/
-    = f.text_field :name_family, autocomplete: "name_family"
-    = f.text_field :name_first, autocomplete: "name_first"
+    .emailPage__body__main
+      .emailPage__body__main__title
+        会員情報入力
 
-  .field
-    = f.label :"お名前カナ(全角) 必須"
-    %br/
-    = f.text_field :kana_family, autocomplete: "kana_family"
-    = f.text_field :kana_first, autocomplete: "kana_first"
+      .emailPage__body__main__formArea
+        = form_for(@user, url: tel_path) do |f|
+          = render "devise/shared/error_messages", resource: @user
 
-  .field
-    = f.label :"生年月日 必須"
-    %br/
-    != sprintf(f.date_select(:birthday, prefix:'user', with_css_classes:'XXXXX', prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+          .emailPage__body__main__formArea__nickname
+            .emailPage__body__main__formArea__nickname__title
+              ニックネーム
+            .emailPage__body__main__formArea__nickname__required
+              必須
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例)メルカリ太郎" ,class: 'nickname-form'
+
+          .emailPage__body__main__formArea__email
+            .emailPage__body__main__formArea__email__title
+              メールアドレス
+            .emailPage__body__main__formArea__email__required
+              必須
+          = f.email_field :email, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+
+          .emailPage__body__main__formArea__password
+            .emailPage__body__main__formArea__password__title
+              パスワード
+            .emailPage__body__main__formArea__password__required
+              必須
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} characters minimum)
+              %br/
+          = f.password_field :password, autocomplete: "new-password", placeholder: "７文字以上の半角英数字"
+
+          .emailPage__body__main__formArea__name
+            .emailPage__body__main__formArea__name__title
+              お名前(全角)
+            .emailPage__body__main__formArea__name__required
+              必須
+          .emailPage__body__main__formArea__name__two-form
+            = f.text_field :name_family, autocomplete: "name_family", class: 'form-left', placeholder: "例)山田"
+            = f.text_field :name_first, autocomplete: "name_first", class: 'form-right', placeholder: "例)彩"
+
+          .emailPage__body__main__formArea__name-kana
+            .emailPage__body__main__formArea__name-kana__title
+              お名前カナ(全角)
+            .emailPage__body__main__formArea__name-kana__required
+              必須
+          .emailPage__body__main__formArea__name-kana__two-form
+            = f.text_field :kana_family, autocomplete: "kana_family", class: 'form-left', placeholder: "例)ヤマダ"
+            = f.text_field :kana_first, autocomplete: "kana_first", class: 'form-right', placeholder: "例)アヤ"
+
+          .emailPage__body__main__formArea__birthday
+            .emailPage__body__main__formArea__birthday__title
+              生年月日
+            .emailPage__body__main__formArea__birthday__required
+              必須
+          .emailPage__body__main__formArea__select-form
+            != sprintf(f.date_select(:birthday, prefix:'user', with_css_classes:'XXXXX', prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+
+          .emailPage__body__main__formArea__submit
+            = f.submit "次へ進む"
 
 
-  .actions
-    = f.submit "Next"
+    = render 'regist_footer'

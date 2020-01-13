@@ -1,7 +1,21 @@
-%h2 新規会員登録
-%div
-  = link_to "メールアドレスで登録する", '/email', class: 'regist'
-%div
-  = link_to "FaceBookで登録する", '#', class: 'regist'
-%div
-  = link_to "Googleで登録する", '#', class: 'regist'
+.regist
+  .regist__body
+    .regist__body__header-selectPage
+      = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+    .regist__body__main
+      .regist__body__main__title
+        新規会員登録
+      .regist__body__main__select
+        = link_to "メールアドレスで登録する", '/email', class: 'email'
+      .regist__body__main__select
+        = link_to user_facebook_omniauth_authorize_path, class: "facebook" do
+          .content-box
+            Facebookで登録する
+      .regist__body__main__select
+        = link_to user_google_oauth2_omniauth_authorize_path, class: "google" do
+          .content-box
+            Googleで登録する
+
+
+    = render 'regist_footer'
+
