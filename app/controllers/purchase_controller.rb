@@ -2,7 +2,7 @@ class PurchaseController < ApplicationController
   require 'payjp'
   before_action :set_card, only: [:index, :pay]
   before_action :set_item, only: [:index, :pay]
-  before_action :check_seller, only: [:index, :pay]
+  before_action :check_transaction, only: [:index, :pay]
 
 
   def index
@@ -17,8 +17,6 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    # @item = Item.find(params[:item_id])
-
     if @card.presence
       Payjp.api_key = ENV['PAYJP_TEST_S_KEY']
       Payjp::Charge.create(
@@ -26,6 +24,7 @@ class PurchaseController < ApplicationController
       :customer => @card.customer_id,
       :currency => 'jpy',
       )
+      @item.update(transaction_status: 2)
       render :done
     else
 
@@ -42,9 +41,13 @@ class PurchaseController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
-  def check_seller
+  def check_transaction
     if @item.seller_id == current_user.id
       redirect_to item_path(@item.id)
+    end
+
+    if @item.transaction_status == 2
+      redirect_to root_path
     end
   end
 end

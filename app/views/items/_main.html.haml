@@ -52,7 +52,7 @@
                 .main__inner__new-arrivals__lower__items__item__img
                   = link_to item_path(item) do
                     = image_tag img.image.url, width: "188px", hight: "188px" ,class:"item-image"
-                  - if item.transaction_status == 1
+                  - if item.transaction_status == 2
                     .main__inner__new-arrivals__lower__items__item__img--sold
                     .main__inner__new-arrivals__lower__items__item__img--word SOLD
                   .main__inner__new-arrivals__lower__items__item__img__price
