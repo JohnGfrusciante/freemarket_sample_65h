@@ -1,0 +1,44 @@
+class PurchaseController < ApplicationController
+  require 'payjp'
+  before_action :set_card, only: [:index, :pay]
+  before_action :set_item, only: [:index, :pay]
+
+
+  def index
+    @image = @item.item_images.where(item_id: @item.id)
+    if @card.blank?
+    else
+      Payjp.api_key = ENV["PAYJP_TEST_S_KEY"]
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
+    @item.update(buyer_id: current_user.id, transaction_status: 1)
+  end
+
+  def pay
+    # @item = Item.find(params[:item_id])
+
+    if @card.presence
+      Payjp.api_key = ENV['PAYJP_TEST_S_KEY']
+      Payjp::Charge.create(
+      :amount => @item.price,
+      :customer => @card.customer_id,
+      :currency => 'jpy',
+      )
+      render :done
+    else
+
+    end
+  end
+
+  private
+
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
+
+end

@@ -8,33 +8,25 @@
       購入内容の確認
     .confirm__item
       .confirm__item__image
+        = image_tag "#{@image[0].image}", class: "confirm__item__image"
       .confirm__item__params
         .confirm__item__params__name
-          Abag
+          #{@item.name}
         .confirm__item__params__price
-          ¥5000 (税込) 送料込み
+          ¥#{@item.price.to_s(:delimited)}
     .confirm__price
       .confirm__price__payment
         支払い金額
         .confirm__price__payment--price
-          ¥5000
+          ¥#{@item.price.to_s(:delimited)}
       .confirm__price__point
         = check_box_tag :test, class: "check_box"
         = label_tag :test, "ポイントを使用(所持ポイント：P0)"
     .confirm__payment
-      .confirm__payment__params
-        .confirm__payment--params
-          支払い方法
-        .confirm__payment--whih
-          クレジットカード
-        .confirm__payment--num
-          カード番号
-        .confirm__payment--limit
-          有効期限
-        .confirm__payment--brand
-          visa
-      .confirm__payment--change_btn
-        = link_to "変更する", "/", id: "change_btn"
+      - if @default_card_information == nil
+        = link_to "クレジットカードを追加", new_item_card_path(@item), id: "change_btn"
+      - else
+        = render "card_params"
     .confirm__Shipping_address
       .confirm__Shipping_address__params
         .confirm__Shipping_address__params--haisousaki
@@ -49,8 +41,10 @@
           鈴木さん
       .confirm__Shipping_address__change_btn
         = link_to "変更する", "/", id: "change_btn"
-    .confirm__btn
-      = link_to "購入する", "/", class: "confirm__btn--btn"
+    = form_with(model: @item, action: :pay, url: pay_item_purchase_index_path(@item), method: :post, id: "pay", local: true) do |form|
+      .confirm__btn
+        = form.submit "購入する", class: "confirm__btn--btn"
+
   .footer_confirm
     .footer_confirm__reading
       = link_to "プライバシーポリシー", "/", id: "reading_link"
@@ -61,4 +55,3 @@
         = link_to image_tag("logo_gray.svg", size: "100x100"), "/"
       .footer_confirm__logo--inc
         ©️mercari, Inc.
--# .to_s(:delimited)} 金額に小数点をつけよう。

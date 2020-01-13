@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(document).ready(function() {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<label data-index="${num}" class="item-num-0">
@@ -29,8 +29,9 @@ $(document).on('turbolinks:load', ()=> {
   fileIndex.splice(0, lastIndex);
 
   if ($('.js-file').css("display")=="none"){
+    var length = $('.js-file').length;
   $('.js-file:last').hide();
-  $('#image-box__container').append(buildFileField(fileIndex[0]));
+  $('#image-box__container').append(buildFileField(fileIndex[length]));
   }
 
   $('#image-box__container').on('change', '.js-file', function(e) {
@@ -46,33 +47,78 @@ $(document).on('turbolinks:load', ()=> {
     } else {  // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('#image-box__container').append(buildFileField(fileIndex[1]));
+      $('#image-box__container').append(buildFileField(fileIndex[length + 1]));
       $(this).parent().hide();
 
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+      fileIndex.push(fileIndex[length] + 1);
       if ($('#previews').children().length == 10) $('#image-box__container').hide();
     }
   });
   $(document).on("click", '.js-remove', function(){
-    var target_image = $(this).parent().parent()
-    var target_image_id = target_image.children('img').attr(`data-index`)
+    var target_image = $(this).parent().parent();
+    var target_image_id = target_image.children('img').attr(`data-index`);
     var target_value = $('.item-num-0').children(`input[id*="${target_image_id}"]`);
     target_image.remove();
     target_value.val("")
   });
 
   $(document).on("click", '.js-remove2', function(){
-    var target_image = $(this).parent().parent()
-    var target_image_id = target_image.children('img').attr('id')
+    var target_image = $(this).parent().parent();
+    var target_image_id = target_image.children('img').attr('id');
     var target_value = $('.item-num-0').children(`input[id*="${target_image_id}__destroy"]`);
     target_image.remove();
     target_value.attr('value', 'true');
   });
   $(document).on("click", '.list_image', function(){
-    var change_image = $(this).attr('src')
-    $('#main_image').attr('src', change_image)
-  })
+    var change_image = $(this).attr('src');
+    $('#main_image').attr('src', change_image);
+  });
+  $(document).on('keyup', '#item_price', function(){
+    var target_number = $(this).val();
+    if (target_number > 299){
+      var price = (target_number * 0.9);
+      var proper_price = Math.floor(price)
+      const buildPrice = () => {
+        const html = `<div class=js-price>
+                        ¥ ${proper_price}
+                      </div>`;
+        return html;
+      }
+      $('.js-price').hide();
+      $('.sell-page__form--price--profit.bold').append(buildPrice);
+
+      var tax = (target_number * 0.1);
+      var proper_tax = Math.floor(tax)
+      const buildTax = () => {
+        const html = `<div class=js-tax>
+                        ¥ ${proper_tax}
+                      </div>`;
+        return html;
+      }
+      $('.js-tax').hide();
+      $('.sell-page__form--price--profit.tax').append(buildTax);
+    }
+    else{
+      const buildPrice2 = () => {
+        const html = `<div class=js-price>
+                        -
+                      </div>`;
+        return html;
+      }
+      $('.js-price').hide();
+      $('.sell-page__form--price--profit.bold').append(buildPrice2);
+
+      const buildTax2 = () => {
+        const html = `<div class=js-tax>
+                        -
+                      </div>`;
+        return html;
+      }
+      $('.js-tax').hide();
+      $('.sell-page__form--price--profit.tax').append(buildTax2);
+    }
+  });
 });
 

@@ -1,0 +1,17 @@
+.confirm__payment__params
+  .confirm__payment--params
+    支払い方法
+  .confirm__payment--whih
+    クレジットカード
+  .confirm__payment--num
+    = "**** **** **** " + @default_card_information.last4
+  .confirm__payment--limit
+    有効期限
+    - exp_month = @default_card_information.exp_month.to_s
+    - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+    = exp_month + " / " + exp_year
+
+  .confirm__payment--brand
+    visa
+.confirm__payment--change_btn
+  = link_to "変更する", new_item_card_path(@item), id: "change_btn"

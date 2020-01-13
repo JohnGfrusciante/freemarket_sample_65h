@@ -1,3 +1,5 @@
+= render 'header'
+
 .show
   .item
     .item__name
@@ -33,7 +35,7 @@
             発送日の目安
         .tb_right
           .tb_right__name
-            = link_to "{@seller_name.nickname}", "/", id: "link_tb_right"
+            = link_to "#{@seller_name.nickname}", "/", id: "link_tb_right"
             .value_icon
               .value_icon--good
                 = icon("fas", "grin-alt", style: "color:pink", class: "value_icon--icon")
@@ -73,11 +75,18 @@
         #{@item.price.to_s(:delimited)}
       .item__price--tax
         (税込)送料込み
-
-    .item__buy
-      = link_to '購入画面へ進む', "/", class: "item__buy__btn"
-    .item__buy
-      = link_to '商品の編集', edit_item_path, class: "item__buy__btn"
+    - if @item.transaction_status == 1
+      .item__sold
+        売り切れました
+    - if @item.transaction_status == 0
+      - if @item.seller_id != current_user.id
+        .item__buy
+          = link_to '購入画面へ進む', item_purchase_index_path(@item), class: "item__buy__btn"
+      - if @item.seller_id == current_user.id
+        .item__buy
+          = link_to '商品の編集', edit_item_path, class: "item__buy__btn"
+        .item__delete
+          = link_to '商品の削除',item_path, method: :delete, class: "item__buy__btn"
 
     .buy_note
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
@@ -216,4 +225,6 @@
 
   .show_footer
     = link_to 'メルカリ ', "/", id: "link_to_set"
-    ＞ 商品名
+    ＞ #{@item.name}
+
+= render 'footer'

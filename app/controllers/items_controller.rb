@@ -13,12 +13,16 @@ class ItemsController < ApplicationController
     gon.image= @item.item_images.where(item_id: @item.id)
 
   # 出品者情報を取得（名前だけが欲しい）。seller_idとusersテーブルのidを紐付け
-    # @seller_name= User.find(@item.seller_id)
+    @seller_name= User.find(@item.seller_id)
   end
 
   def new
-    @item = Item.new
-    @item.item_images.new
+    if user_signed_in?
+      @item = Item.new
+      @item.item_images.new
+    else
+      redirect_to root_path, alert: "サインインして下さい"
+    end
   end
 
   def create
@@ -27,10 +31,12 @@ class ItemsController < ApplicationController
       redirect_to root_path, notice: '商品を出品しました'
     else
       render :new, notice: '商品情報の保存に失敗しました'
-    end 
+    end
   end
 
   def edit
+    @tax = (@item.price * 0.1).to_i
+    @profit = (@item.price * 0.9).to_i
     if @item.present?
       render :edit
     else
@@ -47,13 +53,17 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item.destroy
+    if @item.destroy
+      redirect_to root_path, notice: '商品情報を削除しました'
+    else
+      render :edit, notice: '削除に失敗しました'
+    end
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :discription, :price, :condition, :shipping_charge, :shipping_date, :prefecture, item_images_attributes: [:id, :image, :_destroy])
+    params.require(:item).permit(:name, :discription, :price, :condition, :shipping_charge, :shipping_date, :prefecture, item_images_attributes: [ :id, :image, :_destroy]).merge(seller_id: current_user.id)
   end
 
   def set_item

@@ -1,0 +1,14 @@
+.mypage__inner__main
+  .mypage__inner__main__top
+    %p プロフィール
+  =form_with url: "#" do |f|
+    .user
+      .user__img
+        = image_tag ("/582642681.jpg")
+      .user__name
+        = f.text_field :content, class: "user__name__area", placeholder: "Masanori"
+    .middle
+      .middle__form
+        = f.text_area :content, class: "middle__form__area", placeholder: "例)こんにちは☆ごらんいただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+    .button
+      %button.btn{:type => "submit"} 変更する

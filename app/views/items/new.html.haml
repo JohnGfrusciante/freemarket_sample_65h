@@ -100,12 +100,12 @@
             %p#font-size
               ¥        
               = f.number_field :price, min: 300, max: 9999999, placeholder: "例) 300"
-        .sell-page__form--price--profit
+        .sell-page__form--price--profit.tax
           販売手数料（10%）
-          %p -
+          %p.js-tax -
         .sell-page__form--price--profit.bold
           販売利益
-          %p -
+          %p.js-price -
       .sell-page__form--btn
         .sell-page__form--btn--caution
           = link_to "禁止されている出品"

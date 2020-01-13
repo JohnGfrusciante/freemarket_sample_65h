@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :nickname, :name_family, :name_first, :kana_family, :kana_first, :birthday, :tel, :profit ,presence: true
   validates :tel, uniqueness: true
   has_one :address
+  has_many :items
 
    def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
@@ -55,5 +56,8 @@ class User < ApplicationRecord
       sns = without_sns_data(auth)[:sns]
     end
     return { user: user ,sns: sns}
+  end
+
+  def login
   end
 end

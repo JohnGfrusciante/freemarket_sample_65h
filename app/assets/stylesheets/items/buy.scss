@@ -95,12 +95,12 @@
       height: 50px;
       background-color: #E9352D;
       &--btn{
-        display: block;
-        line-height: 45px;
-        text-decoration: none;
-        text-align: center;
+        height: 50px;
+        width: 380px;
         color: white;
-        font-weight: bold;
+        background-color: #E9352D;
+        border: none;
+
       }
     }
   }
