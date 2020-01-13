@@ -43,11 +43,11 @@ class PurchaseController < ApplicationController
 
   def check_transaction
     if @item.seller_id == current_user.id
-      redirect_to item_path(@item.id)
+      redirect_to item_path(@item.id) and return
     end
 
     if @item.transaction_status == 2
-      redirect_to root_path
+      redirect_to item_path(@item.id) and return
     end
   end
 end
