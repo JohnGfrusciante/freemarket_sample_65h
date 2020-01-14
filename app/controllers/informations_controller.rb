@@ -10,4 +10,5 @@ class InformationsController < ApplicationController
     if !current_user.presence
       redirect_to '/users/sign_in' and return
     end
+  end
 end
