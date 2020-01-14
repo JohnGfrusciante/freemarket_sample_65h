@@ -1,0 +1,24 @@
+.bread{
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  height: 50px;
+  line-height: 50px;
+  .breadcrumbs{
+    width: 1020px;
+    margin: 0 auto;
+    padding-left: 10px;
+    a{
+      color: #333;
+      margin: 10px;
+    }
+    a:hover {
+    text-decoration: underline;
+    color: gray;
+    }
+    .current{
+      margin-left: 10px;
+      font-weight: bold;
+    }
+  }
+}
