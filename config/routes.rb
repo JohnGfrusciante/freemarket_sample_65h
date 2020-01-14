@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   root to: "items#index"
 
   
-  resources :mypages
+  resources :mypages, only:[:index]
   resources :profiles, only:[:index]
   resources :informations, only:[:index]
   
