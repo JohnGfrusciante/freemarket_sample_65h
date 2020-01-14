@@ -4,7 +4,8 @@
       .header__inner__upper
         .header__inner__upper__left
           .header__inner__upper__left__logo
-            = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+            = link_to root_path do
+              = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
         .header__inner__upper__form
           =form_with url: "#" do |f|
             = f.text_field :content, class: 'header__inner__upper__form__area', placeholder: '何かお探しですか？'
