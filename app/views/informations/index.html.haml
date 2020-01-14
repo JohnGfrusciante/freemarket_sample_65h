@@ -37,7 +37,7 @@
             %span 任意
             .form-group__text
               %select{name: "prefecture"}
-                %option{selected: "selected", value: ""} --
+                %option{selected: "selected", value: ""}= current_user.address.prefecture
                 %option{value: "1"} 北海道
                 %option{value: "2"} 青森県
                 %option{value: "3"} 岩手県
@@ -89,17 +89,17 @@
             市町区村
             %span 任意
             .form-group__text
-              = f.text_field :content, class: "form-group__area", placeholder: "例)1234567"
+              = f.text_field :content, class: "form-group__area", placeholder: "例)横浜市緑区"
           .form-group
             番地
             %span 任意
             .form-group__text
-              = f.text_field :content, class: "form-group__area", placeholder: "例)1234567"
+              = f.text_field :content, class: "form-group__area", placeholder: "例)青山1-1-1"
           .form-group
             建物名
             %span 任意
             .form-group__text
-              = f.text_field :content, class: "form-group__area", placeholder: "例)1234567"
+              = f.text_field :content, class: "form-group__area", placeholder: "例)柳ビル103"
           .button
             %button.btn{:type => "submit"} 変更する
         .bottom-info
