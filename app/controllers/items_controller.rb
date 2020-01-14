@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_price, only: [:update, :edit]
   def index
     @items= Item.order("created_at DESC").limit(10)
     @images = ItemImage.all
@@ -27,16 +28,14 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+      if @item.save
       redirect_to root_path, notice: '商品を出品しました'
     else
-      render :new, notice: '商品情報の保存に失敗しました'
+      redirect_to new_item_path, notice: '商品情報の保存に失敗しました'
     end
   end
 
   def edit
-    @tax = (@item.price * 0.1).to_i
-    @profit = (@item.price * 0.9).to_i
     if @item.present?
       render :edit
     else
@@ -68,5 +67,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_price
+    @tax = (@item.price * 0.1).to_i
+    @profit = (@item.price * 0.9).to_i
   end
 end

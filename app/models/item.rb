@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   validates :shipping_charge, presence: true
   validates :shipping_date, presence: true
   validates :prefecture, presence: true
+  validates :item_images, presence: true
 
   belongs_to :user, foreign_key: 'user_id', optional: true
   belongs_to :category, optional: true

@@ -20,7 +20,7 @@
         #image-box-1
           #previews
           #image-box__container
-            = f.label :image, class: 'item-num-0'  do
+            = f.label :image, class: 'item-num-0', data: {index: "0"}   do
               = f.fields_for :item_images do |i|
                 = i.file_field :image, class: 'js-file'
                 %pre

@@ -47,12 +47,10 @@ $(document).ready(function() {
     } else {  // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('#image-box__container').append(buildFileField(fileIndex[length + 1]));
+      $('#image-box__container').append(buildFileField(fileIndex[targetIndex + 1]));
       $(this).parent().hide();
-
-      fileIndex.shift();
       // 末尾の数に1足した数を追加する
-      fileIndex.push(fileIndex[length] + 1);
+      fileIndex.push(fileIndex[targetIndex] + 1);
       if ($('#previews').children().length == 10) $('#image-box__container').hide();
     }
   });
