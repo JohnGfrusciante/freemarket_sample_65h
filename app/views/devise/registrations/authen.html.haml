@@ -2,7 +2,8 @@
   .authenPage__body
     .authenPage__body__header
       %h1
-        = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+        = link_to root_path do
+          = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
       %ol.authenPage__body__header__nav
         %li.authenPage__body__header__nav--email
           会員情報
