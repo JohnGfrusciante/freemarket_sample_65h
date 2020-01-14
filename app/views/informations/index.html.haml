@@ -1,6 +1,6 @@
 = render "items/header"
 .mypage
- .bread
+  .bread
     - breadcrumb :informations
     = breadcrumbs separator: "&rsaquo;"
   .mypage__inner
@@ -18,13 +18,15 @@
         =form_with url: "#" do |f|
           .form-group
             お名前
-            %p 西澤 政徳
+          = current_user.name_family
+          = current_user.name_first
           .form-group
             お名前カナ
-            %p ニシザワ マサノリ
+          = current_user.kana_family
+          = current_user.kana_first
           .form-group
             生年月日
-            %p 1992/4/14
+          = current_user.birthday
           .form-group
             郵便番号
             %span 任意
@@ -35,7 +37,7 @@
             %span 任意
             .form-group__text
               %select{name: "prefecture"}
-                %option{selected: "selected", value: ""} --
+                %option{selected: "selected", value: ""}= current_user.address.prefecture
                 %option{value: "1"} 北海道
                 %option{value: "2"} 青森県
                 %option{value: "3"} 岩手県
@@ -87,17 +89,17 @@
             市町区村
             %span 任意
             .form-group__text
-              = f.text_field :content, class: "form-group__area", placeholder: "例)1234567"
+              = f.text_field :content, class: "form-group__area", placeholder: "例)横浜市緑区"
           .form-group
             番地
             %span 任意
             .form-group__text
-              = f.text_field :content, class: "form-group__area", placeholder: "例)1234567"
+              = f.text_field :content, class: "form-group__area", placeholder: "例)青山1-1-1"
           .form-group
             建物名
             %span 任意
             .form-group__text
-              = f.text_field :content, class: "form-group__area", placeholder: "例)1234567"
+              = f.text_field :content, class: "form-group__area", placeholder: "例)柳ビル103"
           .button
             %button.btn{:type => "submit"} 変更する
         .bottom-info

@@ -3,7 +3,8 @@
     .user
       =link_to "#", class: "user__link" do
         = image_tag ("/582642681.jpg")
-        .user__link__nickname Masanori
+        .user__link__nickname 
+          = current_user.nickname
         .user__link__review
           %div
             評価

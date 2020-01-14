@@ -1,7 +1,7 @@
 .mypage__inner__nav
   %ul.mypage__inner__nav__list
     %li
-      = link_to "マイページ", mypages_path
+      = link_to "マイページ", mypages_path, method: :get
       = icon("fas", "chevron-right", class: "icon")
     %li
       = link_to "お知らせ"
