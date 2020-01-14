@@ -15,13 +15,15 @@
         =form_with url: "#" do |f|
           .form-group
             お名前
-            %p 西澤 政徳
+          = current_user.name_family
+          = current_user.name_first
           .form-group
             お名前カナ
-            %p ニシザワ マサノリ
+          = current_user.kana_family
+          = current_user.kana_first
           .form-group
             生年月日
-            %p 1992/4/14
+          = current_user.birthday
           .form-group
             郵便番号
             %span 任意
