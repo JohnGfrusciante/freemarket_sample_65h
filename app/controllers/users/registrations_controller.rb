@@ -69,6 +69,7 @@ end
       render :address and return
     end
     session["devise.regist_data"][:address] = (@address.attributes)
+    
   end
 
   def done
