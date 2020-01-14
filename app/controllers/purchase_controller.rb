@@ -8,7 +8,7 @@ class PurchaseController < ApplicationController
   def index
     @image = @item.item_images.where(item_id: @item.id)
     if !@card.blank?
-      Payjp.api_key = ENV["PAYJP_TEST_S_KEY"]
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_TEST_S_KEY]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
@@ -17,7 +17,7 @@ class PurchaseController < ApplicationController
 
   def pay
     if @card.presence
-      Payjp.api_key = ENV['PAYJP_TEST_S_KEY']
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_TEST_S_KEY]
       Payjp::Charge.create(
       :amount => @item.price,
       :customer => @card.customer_id,
