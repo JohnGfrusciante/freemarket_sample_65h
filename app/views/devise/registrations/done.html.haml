@@ -1,4 +1,42 @@
-%h1
-  会員登録完了
-%h2
-  = link_to "メルカリをはじめる", root_path
+.donePage
+  .donePage__body
+    .donePage__body__header
+      %h1
+        = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+      %ol.donePage__body__header__nav
+        %li.donePage__body__header__nav--email
+          会員情報
+          .donePage__body__header__nav--email--point
+          .donePage__body__header__nav--email--line
+
+        %li.donePage__body__header__nav--tel
+          電話番号認証
+          .donePage__body__header__nav--tel--point
+          .donePage__body__header__nav--tel--line
+
+        %li.donePage__body__header__nav--address
+          お届け先住所入力
+          .donePage__body__header__nav--address--point
+          .donePage__body__header__nav--address--line
+
+        %li.donePage__body__header__nav--credit
+          支払い方法
+          .donePage__body__header__nav--credit--point
+          .donePage__body__header__nav--credit--line
+
+        %li.donePage__body__header__nav--done
+          完了
+          .donePage__body__header__nav--done--point
+
+
+    .donePage__body__main
+      .donePage__body__main__title
+        会員登録完了
+      .donePage__body__main__text
+        ありがとうございます。
+        %br
+        会員登録が完了しました。
+      .donePage__body__main__top-link
+        = link_to "メルカリをはじめる", root_path
+
+    = render 'regist_footer'

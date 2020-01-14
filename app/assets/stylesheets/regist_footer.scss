@@ -1,0 +1,22 @@
+$gray: #333333;
+
+.regist-footer {
+  background-color: #F5F5F5;
+  padding-bottom: 30px;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 0 170px;
+    margin-top: 90px;
+    a {
+      color: $gray;
+    }
+  }
+  &--logo {
+    margin-top: 40px;
+  }
+  &--copy-right {
+    font-size: 11px;
+  }
+}
