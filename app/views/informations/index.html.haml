@@ -1,5 +1,8 @@
 = render "items/header"
 .mypage
+ .bread
+    - breadcrumb :informations
+    = breadcrumbs separator: "&rsaquo;"
   .mypage__inner
     = render "mypages/mypage-sidebar"
     .mypage__inner__main

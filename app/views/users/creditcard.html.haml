@@ -1,5 +1,8 @@
 = render "items/header"
 .mypage
+  .bread
+    - breadcrumb :creditcard
+    = breadcrumbs separator: "&rsaquo;"
   .mypage__inner
     = render "mypages/mypage-sidebar"
     .credit
