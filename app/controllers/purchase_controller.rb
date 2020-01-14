@@ -16,7 +16,7 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    if !@card.presence
+    if @card.presence
       Payjp.api_key = ENV['PAYJP_TEST_S_KEY']
       Payjp::Charge.create(
       :amount => @item.price,
@@ -25,6 +25,8 @@ class PurchaseController < ApplicationController
       )
       @item.update(transaction_status: 2)
       render :done
+    else
+      redirect_to item_purchase_index_path(@item)
     end
   end
 
