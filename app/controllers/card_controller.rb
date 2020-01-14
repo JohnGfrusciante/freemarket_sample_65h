@@ -1,5 +1,6 @@
 class CardController < ApplicationController
   require "payjp"
+  before_action :check_login
   before_action :set_card, only: [:new, :destroy, :show]
 
   def new
@@ -57,5 +58,11 @@ class CardController < ApplicationController
     Payjp.api_key = ENV["PAYJP_TEST_S_KEY"]
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @default_card_information = customer.cards.retrieve(@card.card_id)
+  end
+
+  def check_login
+    if !current_user.presence
+      redirect_to '/users/sign_in' and return
+    end
   end
 end
