@@ -1,14 +1,13 @@
 class PurchaseController < ApplicationController
   require 'payjp'
+  before_action :check_login, only: [:index, :pay]
   before_action :set_card, only: [:index, :pay]
   before_action :set_item, only: [:index, :pay]
   before_action :check_transaction, only: [:index, :pay]
 
-
   def index
     @image = @item.item_images.where(item_id: @item.id)
-    if @card.blank?
-    else
+    if !@card.blank?
       Payjp.api_key = ENV["PAYJP_TEST_S_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
@@ -17,7 +16,7 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    if @card.presence
+    if !@card.presence
       Payjp.api_key = ENV['PAYJP_TEST_S_KEY']
       Payjp::Charge.create(
       :amount => @item.price,
@@ -26,8 +25,6 @@ class PurchaseController < ApplicationController
       )
       @item.update(transaction_status: 2)
       render :done
-    else
-
     end
   end
 
@@ -39,6 +36,12 @@ class PurchaseController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+  end
+
+  def check_login
+    if !current_user.presence
+      redirect_to '/users/sign_in' and return
+    end
   end
 
   def check_transaction

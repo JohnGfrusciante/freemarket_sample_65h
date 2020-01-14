@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :check_transaction, only: [:edit, :update, :destroy]
+
   def index
     @items= Item.order("created_at DESC").limit(10)
     @images = ItemImage.all
@@ -69,4 +71,15 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def check_transaction
+    if @item.seller_id != current_user.id
+      redirect_to item_path(@item.id) and return
+    end
+
+    if @item.transaction_status == 2
+      redirect_to item_path(@item.id) and return
+    end
+  end
+
 end

@@ -41,6 +41,7 @@
           鈴木さん
       .confirm__Shipping_address__change_btn
         = link_to "変更する", "/", id: "change_btn"
+        
     = form_with(model: @item, action: :pay, url: pay_item_purchase_index_path(@item), method: :post, id: "pay", local: true) do |form|
       .confirm__btn
         = form.submit "購入する", class: "confirm__btn--btn"
