@@ -1,0 +1,293 @@
+$gray: #333333;
+$nav-gray: #CCCCCC;
+
+@mixin background {
+  background-color: #F5F5F5;
+  height: 100%;
+}
+
+@mixin body {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #F5F5F5;
+}
+
+@mixin main {
+  background-color: #fff;
+  // height: 50vh;
+}
+
+@mixin nav {
+  display: flex;
+  font-size: 12px;
+  color: $nav-gray;
+  font-weight: bold;
+}
+
+@mixin nav-list {
+  position: relative;
+  margin-left: 46px;
+}
+
+@mixin nav-point {
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  position: absolute;
+  top: 22px;
+}
+
+@mixin nav-line {
+  border: solid 1px $nav-gray;
+  position: absolute;
+  top: 27px;
+}
+
+@mixin nav-line-red {
+  border: solid 1px red;
+  position: absolute;
+  top: 27px;
+}
+
+@mixin title {
+  font-weight: bold;
+  font-size: 21px;
+  border-bottom: solid 1px #F5F5F5;
+  padding: 30px 0;
+}
+
+@mixin form-area {
+  padding: 0 0 50px 0;
+  width: 340px;
+  margin: 0 auto;
+}
+
+@mixin form-title {
+  display: flex;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  position: relative;
+  margin-top: 30px;
+}
+
+@mixin required {
+  font-size: 11px;
+  font-weight: normal;
+  background-color: red;
+  color: #fff;
+  padding: 1px 4px;
+  border-radius: 2px;
+  margin-left: 10px;
+}
+
+@mixin no-required {
+  font-size: 11px;
+  font-weight: normal;
+  background-color: $nav-gray;
+  color: #fff;
+  padding: 1px 4px;
+  border-radius: 2px;
+  margin-left: 10px;
+}
+
+@mixin input-form {
+  width: 340px;
+  height: 44px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: solid 1px $nav-gray;
+}
+
+@mixin select-form {
+  height: 44px;
+  width: 70px;
+  background-color: #fff;
+}
+
+@mixin submit-form {
+  color: #fff;
+  background-color: red;
+  border-radius: 0;
+  font-size: 13px;
+  width: 356px;
+  height: 50px;
+  margin-top: 40px;
+}
+
+
+.addressPage {
+  @include background;
+  &__body {
+    @include body;
+    color: $gray;
+    &__header {
+      display: flex;
+      padding: 40px 0;
+      &__nav {
+        @include nav;
+        &--email {
+          @include nav-list;
+          color: $nav-gray;
+          &--point {
+            @include nav-point;
+            border: solid 5px red;
+            background-color: red;
+            left: 18px;
+          }
+          &--line {
+            @include nav-line-red;
+            width: 91px;
+            left: 30px;
+          }
+        }
+        &--tel {
+          @include nav-list;
+          color: $nav-gray;
+          &--point {
+            @include nav-point;
+            border: solid 5px red;
+            background-color: red;
+            left: 29px;
+          }
+          &--line {
+            @include nav-line-red;
+            width: 113px;
+            left: 41px;
+          }
+        }
+        &--address {
+          @include nav-list;
+          color: red;
+          &--point {
+            @include nav-point;
+            border: solid 5px red;
+            background-color: red;
+            left: 38px;
+          }
+          &--line {
+            @include nav-line;
+            width: 115px;
+            left: 50px;
+          }
+        }
+        &--credit {
+          @include nav-list;
+          &--point {
+            @include nav-point;
+            border: solid 5px $nav-gray;
+            background-color: $nav-gray;
+            left: 25px;
+          }
+          &--line {
+            @include nav-line;
+            width: 74px;
+            left: 37px;
+          }
+        }
+        &--done {
+          @include nav-list;
+          &--point {
+            @include nav-point;
+            border: solid 5px $nav-gray;
+            background-color: $nav-gray;
+            left: 7px;
+          }
+        }
+      }
+    }
+    &__main {
+      @include main;
+      &__title {
+        @include title;
+      }
+      &__formArea {
+        @include form-area;
+        input {
+          @include input-form;
+        }
+        &__name {
+          @include form-title;
+          &__required {
+            @include required;
+          }
+          &__two-form {
+            display: flex;
+            .form-left {
+              width: 160px;
+              margin-right: 10px;
+            }
+            .form-right {
+              width: 160px;
+            }
+          }
+        }
+        &__name-kana {
+          @include form-title;
+          &__required {
+            @include required;
+          }
+          &__two-form {
+            display: flex;
+            .form-left {
+              width: 160px;
+              margin-right: 10px;
+            }
+            .form-right {
+              width: 160px;
+            }
+          }
+        }
+        &__postal-code {
+          @include form-title;
+          &__required {
+            @include required;
+          }
+        }
+        &__prefecture {
+          @include form-title;
+          &__required {
+            @include required;
+          }
+        }
+        &__select-form {
+          text-align: left;
+          select {
+            @include select-form;
+            width: 340px;
+          }
+        }
+        &__municipality {
+          @include form-title;
+          &__required {
+            @include required;
+          }
+        }
+        &__house-number {
+          @include form-title;
+          &__required {
+            @include required;
+          }
+        }
+        &__building {
+          @include form-title;
+          &__required {
+            @include no-required;
+          }
+        }
+        &__tel {
+          @include form-title;
+          &__required {
+            @include no-required;
+          }
+        }
+        &__submit {
+          input {
+            @include submit-form;
+          }
+        }
+      }
+    }
+  }
+}

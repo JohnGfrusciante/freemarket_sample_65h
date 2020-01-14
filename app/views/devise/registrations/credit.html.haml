@@ -1,24 +1,71 @@
-%h2 支払い方法
-= form_for @user,url: done_path, method: :post do |f|
-  = render "devise/shared/error_messages", resource: @user
+.creditPage
+  .creditPage__body
+    .creditPage__body__header
+      %h1
+        = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+      %ol.creditPage__body__header__nav
+        %li.creditPage__body__header__nav--email
+          会員情報
+          .creditPage__body__header__nav--email--point
+          .creditPage__body__header__nav--email--line
 
-  .field
-    = f.label :"カード番号"
-    %br/
-    %input.text_field
+        %li.creditPage__body__header__nav--tel
+          電話番号認証
+          .creditPage__body__header__nav--tel--point
+          .creditPage__body__header__nav--tel--line
 
-  .field
-    = f.label :"有効期限"
-    %br/
-    = f.select :presence, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
-    月
-    = f.select :presence, ['20', '19', '18']
-    年
+        %li.creditPage__body__header__nav--address
+          お届け先住所入力
+          .creditPage__body__header__nav--address--point
+          .creditPage__body__header__nav--address--line
 
-  .field
-    = f.label :"セキュリティコード"
-    %br/
-    %input.text_field
+        %li.creditPage__body__header__nav--credit
+          支払い方法
+          .creditPage__body__header__nav--credit--point
+          .creditPage__body__header__nav--credit--line
 
-  .actions
-    = f.submit "Sign up"
+        %li.creditPage__body__header__nav--done
+          完了
+          .creditPage__body__header__nav--done--point
+
+
+    .creditPage__body__main
+      .creditPage__body__main__title
+        支払い方法
+
+      .creditPage__body__main__formArea
+        = form_for @user,url: done_path, method: :post do |f|
+          = render "devise/shared/error_messages", resource: @user
+
+          .creditPage__body__main__formArea__card-number
+            .creditPage__body__main__formArea__card-number__title
+              カード番号
+            .creditPage__body__main__formArea__card-number__required
+              必須
+          .creditPage__body__main__formArea__input-form
+            %input.text_field{placeholder: "半角数字のみ"}
+
+          .creditPage__body__main__formArea__expiration
+            .creditPage__body__main__formArea__expiration__title
+              有効期限
+            .creditPage__body__main__formArea__expiration__required
+              必須
+          .creditPage__body__main__formArea__select-form
+            = f.select :presence, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+            月
+            = f.select :presence, ['20', '19', '18']
+            年
+
+          .creditPage__body__main__formArea__security-code
+            .creditPage__body__main__formArea__security-code__title
+              セキュリティコード
+            .creditPage__body__main__formArea__security-code__required
+              必須
+          .creditPage__body__main__formArea__input-form
+            %input.text_field{placeholder: "カード背面4桁もしくは3桁の番号"}
+
+          .creditPage__body__main__formArea__submit
+            = f.submit "次へ進む"
+
+
+    = render 'regist_footer'

@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_price, only: [:update, :edit]
+  before_action :check_transaction, only: [:edit, :update, :destroy]
+
   def index
     @items= Item.order("created_at DESC").limit(10)
     @images = ItemImage.all
@@ -73,4 +75,15 @@ class ItemsController < ApplicationController
     @tax = (@item.price * 0.1).to_i
     @profit = (@item.price * 0.9).to_i
   end
+
+  def check_transaction
+    if @item.seller_id != current_user.id
+      redirect_to item_path(@item.id) and return
+    end
+
+    if @item.transaction_status == 2
+      redirect_to item_path(@item.id) and return
+    end
+  end
+
 end
