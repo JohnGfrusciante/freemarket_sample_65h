@@ -26,7 +26,11 @@
           %li.header__inner__lower__right__content
             = link_to "やることリスト"
           %li.header__inner__lower__right__content
-            = link_to "マイページ"
+
+            - if user_signed_in?
+              = link_to "マイページ", mypages_path, method: :get
+            - else
+              = link_to "マイページ", '/users/sign_up'
           %li.header__inner__lower__right__content
             = link_to "ログアウト", destroy_user_session_path, method: :delete
       - else
