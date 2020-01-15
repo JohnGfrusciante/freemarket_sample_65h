@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :check_login, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_price, only: [:update, :edit]
   before_action :check_transaction, only: [:edit, :update, :destroy]
@@ -14,12 +15,8 @@ class ItemsController < ApplicationController
   end
 
   def new
-    if user_signed_in?
-      @item = Item.new
-      @item.item_images.new
-    else
-      redirect_to root_path, alert: "サインインして下さい"
-    end
+    @item = Item.new
+    @item.item_images.new
   end
 
   def create
@@ -83,6 +80,12 @@ class ItemsController < ApplicationController
 
     if @item.transaction_status == 2
       redirect_to item_path(@item.id) and return
+    end
+  end
+
+  def check_login
+    if !current_user.presence
+      redirect_to '/users/sign_in' and return
     end
   end
 

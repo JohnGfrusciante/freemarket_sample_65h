@@ -39,15 +39,19 @@ $border-red: #EE0000 2px solid;
             transition: padding-right 0.25s;
             .icon{
               color: $black;
+              position: absolute;
+              right: 15px;
             }
           }
         a{
           color: $black;
+          display: block;
           
         }
 
         .icon{
           position: absolute;
+          top: 40%;
           right: 15px;
           color: $gainsboro;
         }
@@ -69,6 +73,7 @@ $border-red: #EE0000 2px solid;
         text-align: center;
         height: 200px;
         width: 100%;
+        position: relative;
         &__link{
           display: block;
           position: absolute;

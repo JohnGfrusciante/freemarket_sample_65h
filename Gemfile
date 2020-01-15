@@ -95,11 +95,9 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 
 # Environment variable
-gem 'dotenv-rails'
-
 gem 'pry-rails'
 gem 'fog-aws'
 gem 'payjp'
-# gem 'jquery-turbolinks'
 gem 'jquery-rails'
 gem 'execjs'
+gem 'gretel'

@@ -2,7 +2,8 @@
   .creditPage__body
     .creditPage__body__header
       %h1
-        = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
+        = link_to root_path do
+          = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
       %ol.creditPage__body__header__nav
         %li.creditPage__body__header__nav--email
           会員情報
@@ -43,7 +44,7 @@
             .creditPage__body__main__formArea__card-number__required
               必須
           .creditPage__body__main__formArea__input-form
-            %input.text_field{placeholder: "半角数字のみ"}
+            = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
 
           .creditPage__body__main__formArea__expiration
             .creditPage__body__main__formArea__expiration__title
@@ -51,9 +52,34 @@
             .creditPage__body__main__formArea__expiration__required
               必須
           .creditPage__body__main__formArea__select-form
-            = f.select :presence, ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+            %select#exp_month{name: "exp_month", type: "text"}
+              %option{value: ""} --
+              %option{value: "1"}01
+              %option{value: "2"}02
+              %option{value: "3"}03
+              %option{value: "4"}04
+              %option{value: "5"}05
+              %option{value: "6"}06
+              %option{value: "7"}07
+              %option{value: "8"}08
+              %option{value: "9"}09
+              %option{value: "10"}10
+              %option{value: "11"}11
+              %option{value: "12"}12
             月
-            = f.select :presence, ['20', '19', '18']
+            %select#exp_year{name: "exp_year", type: "text"}
+              %option{value: ""} --
+              %option{value: "2019"}19
+              %option{value: "2020"}20
+              %option{value: "2021"}21
+              %option{value: "2022"}22
+              %option{value: "2023"}23
+              %option{value: "2024"}24
+              %option{value: "2025"}25
+              %option{value: "2026"}26
+              %option{value: "2027"}27
+              %option{value: "2028"}28
+              %option{value: "2029"}29
             年
 
           .creditPage__body__main__formArea__security-code
@@ -62,7 +88,7 @@
             .creditPage__body__main__formArea__security-code__required
               必須
           .creditPage__body__main__formArea__input-form
-            %input.text_field{placeholder: "カード背面4桁もしくは3桁の番号"}
+            = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
 
           .creditPage__body__main__formArea__submit
             = f.submit "次へ進む"

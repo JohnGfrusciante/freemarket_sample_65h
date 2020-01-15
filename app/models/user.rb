@@ -34,7 +34,7 @@ class User < ApplicationRecord
     end
 
    def self.with_sns_data(auth, snscredential)
-    user = User.find(id: snscredential.user_id)
+    user = User.find_by(id: snscredential.user_id)
     unless user.present?
       user = User.new(
         nickname: auth.info.name,
