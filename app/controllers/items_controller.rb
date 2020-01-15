@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_price, only: [:update, :edit]
   before_action :check_transaction, only: [:edit, :update, :destroy]
@@ -10,12 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-  # 参照する１つの商品情報を取得。選択したアイテムのIDを引数にする
-  # item_idの値が同じレコードを取得
     @image= @item.item_images.where(item_id: @item.id)
-    gon.image= @item.item_images.where(item_id: @item.id)
-
-  # 出品者情報を取得（名前だけが欲しい）。seller_idとusersテーブルのidを紐付け
     @seller_name= User.find(@item.seller_id)
   end
 
@@ -59,6 +53,12 @@ class ItemsController < ApplicationController
     else
       render :edit, notice: '削除に失敗しました'
     end
+  end
+
+  def search
+    @items = Item.search(params[:keyword])
+    @keyword = params[:keyword]
+    @images = ItemImage.where(item_id: @items.ids)
   end
 
   private

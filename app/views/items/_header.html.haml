@@ -5,8 +5,8 @@
         .header__inner__upper__left__logo
           = image_tag ("/fmarket_logo_red.svg"),size: "180x45"
       .header__inner__upper__form
-        =form_with url: "#" do |f|
-          = f.text_field :content, class: 'header__inner__upper__form__area', placeholder: '何かお探しですか？'
+        =form_with(url: search_items_path, method: :get, local: true) do |f|
+          = f.text_field :keyword, class: 'header__inner__upper__form__area', placeholder: '何かお探しですか？'
         .header__inner__upper__form__buttom
     .header__inner__lower
       .header__inner__lower__left

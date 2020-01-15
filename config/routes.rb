@@ -32,7 +32,15 @@ Rails.application.routes.draw do
   resources :informations, only:[:index]
   
   resources :items do
-    resources :item_images, only: [:create]
+
+    collection do
+      get 'search'
+    end
+
+    resources :item_images, only: [:create] do
+      
+    end
+
     resources :purchase, only: [:index] do
       collection do
         get 'pay', to: 'purchase#pay'
@@ -40,14 +48,12 @@ Rails.application.routes.draw do
         get 'done', to: 'purchase#done'
       end
     end
-
-      resources :card, only: [:new, :show, :destroy] do
-        collection do
-          post 'get', to: 'card#pay'
-          post 'pay', to: 'card#pay'
-        end
+    resources :card, only: [:new, :show, :destroy] do
+      collection do
+        post 'get', to: 'card#pay'
+        post 'pay', to: 'card#pay'
       end
-    
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
