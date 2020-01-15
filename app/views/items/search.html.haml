@@ -1,0 +1,22 @@
+= render 'header'
+
+.search__header
+  #{@keyword}の検索結果
+
+.search
+  - if @items.presence
+    - @items.each.with_index do |item, i |
+      .search__item
+        = link_to item_path(item.id) do
+          .search__item__image
+            = image_tag item.item_images[0].image.url, height: 220, width: 220, class: "search__item__image"
+          .search__item__params
+            .search__item__name
+              #{item.name}
+            .search_item__price
+              #{item.price}円
+            .search_items__iine
+              ♡５
+  - else
+    検索結果はありません
+

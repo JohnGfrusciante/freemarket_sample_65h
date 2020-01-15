@@ -1,0 +1,34 @@
+
+.search__header{
+  text-align: center;
+  font-size: 36px;
+}
+.search{
+  width: 720px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap:wrap;
+  &__item{
+    height: 330px;
+    width: 220px;
+    margin-right: 15px;
+    &__image{
+      height: 220px;
+      background-color: black;
+    }
+   &__params{
+    height: 110px;
+    background-color: #FFFFFF;
+    padding: 0 20px;
+     &__name{
+      padding: 10px 0 45px;
+     }
+     &__price{
+      display: inline;
+     }
+     &__iine{
+      float: right;
+     }
+   }
+  }
+}
