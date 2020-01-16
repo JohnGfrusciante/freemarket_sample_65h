@@ -15,7 +15,7 @@ $nav-gray: #CCCCCC;
 
 @mixin main {
   background-color: #fff;
-  height: 40vh;
+  padding-bottom: 10px;
 }
 
 @mixin nav {
