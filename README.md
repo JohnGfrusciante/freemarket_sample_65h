@@ -19,6 +19,8 @@
 ### Association
 - has_many :items
 - has_one :address
+- has_one :card
+- has_one :sns_credential
 
 
 ## Addresses Table
@@ -86,3 +88,27 @@
 ### Association
 - has_many :items
 - has_ancestry
+
+
+## Cards Table
+|Column|Type|Options|
+|------|----|-------|
+|id|integer||
+|user_id|integer||
+|customer_id|string||
+|card_id|string||
+
+### Association
+- belongs_to :user
+
+
+## Sns_credentials Table
+|Column|Type|Options|
+|------|----|-------|
+|id|integer||
+|provider|string||
+|uid|string||
+|user_id|references|foreign_key: true|
+
+### Association
+- belongs_to :user
