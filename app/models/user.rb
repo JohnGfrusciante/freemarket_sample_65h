@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :nickname, :name_family, :name_first, :kana_family, :kana_first, :birthday, :tel, :profit ,presence: true
   validates :tel, uniqueness: true
   has_one :address
+  has_one :card
   has_many :items
 
    def self.without_sns_data(auth)
