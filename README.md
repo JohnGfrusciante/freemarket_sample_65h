@@ -87,7 +87,7 @@
 
 ### Association
 - has_many :items
-- has_ancestry
+- use : ancestry
 
 
 ## Cards Table
@@ -100,6 +100,7 @@
 
 ### Association
 - belongs_to :user
+- use : payjp
 
 
 ## Sns_credentials Table
